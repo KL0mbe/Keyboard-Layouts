@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>org.sil.ukelele.keyboardlayout.centraleuropean</string>
+	<key>CFBundleName</key>
+	<string>Central European</string>
+	<key>CFBundleVersion</key>
+	<string></string>
+	<key>KLInfo_Czech</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.czech</string>
+		<key>TISIntendedLanguage</key>
+		<string>cs</string>
+	</dict>
+	<key>KLInfo_Czech-QWERTY</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.czech-qwerty</string>
+		<key>TISIntendedLanguage</key>
+		<string>cs</string>
+	</dict>
+	<key>KLInfo_Estonian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.estonian</string>
+		<key>TISIntendedLanguage</key>
+		<string>et</string>
+	</dict>
+	<key>KLInfo_Hungarian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.hungarian</string>
+		<key>TISIntendedLanguage</key>
+		<string>hu</string>
+	</dict>
+	<key>KLInfo_Latvian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.latvian</string>
+		<key>TISIntendedLanguage</key>
+		<string>lv</string>
+	</dict>
+	<key>KLInfo_Lithuanian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.lithuanian</string>
+		<key>TISIntendedLanguage</key>
+		<string>lt</string>
+	</dict>
+	<key>KLInfo_Polish</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.polish</string>
+		<key>TISIntendedLanguage</key>
+		<string>pl</string>
+	</dict>
+	<key>KLInfo_Polish Pro</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.polishpro</string>
+		<key>TISIntendedLanguage</key>
+		<string>pl</string>
+	</dict>
+	<key>KLInfo_Slovak</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.centraleuropean.slovak</string>
+		<key>TISIntendedLanguage</key>
+		<string>sk</string>
+	</dict>
+</dict>
+</plist>

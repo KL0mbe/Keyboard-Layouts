@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts</string>
+	<key>CFBundleName</key>
+	<string>Logitech Keyboard Layouts</string>
+	<key>CFBundleVersion</key>
+	<string></string>
+	<key>KLInfo_Logitech Belgian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechbelgian</string>
+		<key>TISIntendedLanguage</key>
+		<string>fr</string>
+	</dict>
+	<key>KLInfo_Logitech Danish</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechdanish</string>
+		<key>TISIntendedLanguage</key>
+		<string>da</string>
+	</dict>
+	<key>KLInfo_Logitech Finnish</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechfinnish</string>
+		<key>TISIntendedLanguage</key>
+		<string>fi</string>
+	</dict>
+	<key>KLInfo_Logitech German</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechgerman</string>
+		<key>TISIntendedLanguage</key>
+		<string>de</string>
+	</dict>
+	<key>KLInfo_Logitech Italian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechitalian</string>
+		<key>TISIntendedLanguage</key>
+		<string>it</string>
+	</dict>
+	<key>KLInfo_Logitech Norwegian</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechnorwegian</string>
+		<key>TISIntendedLanguage</key>
+		<string>nb</string>
+	</dict>
+	<key>KLInfo_Logitech Portuguese</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechportuguese</string>
+		<key>TISIntendedLanguage</key>
+		<string>pt</string>
+	</dict>
+	<key>KLInfo_Logitech Spanish</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechspanish</string>
+		<key>TISIntendedLanguage</key>
+		<string>es</string>
+	</dict>
+	<key>KLInfo_Logitech Swedish</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechswedish</string>
+		<key>TISIntendedLanguage</key>
+		<string>sv</string>
+	</dict>
+	<key>KLInfo_Logitech Swiss French</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechswissfrench</string>
+		<key>TISIntendedLanguage</key>
+		<string>fr-CH</string>
+	</dict>
+	<key>KLInfo_Logitech Swiss German</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechswissgerman</string>
+		<key>TISIntendedLanguage</key>
+		<string>de-CH</string>
+	</dict>
+	<key>KLInfo_Logitech U.K. Intl</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechu.k.intl</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
+	<key>KLInfo_Logitech US Intl</key>
+	<dict>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.logitechkeyboardlayouts.logitechusintl</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
+</dict>
+</plist>

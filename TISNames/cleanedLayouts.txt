@@ -1,0 +1,241 @@
+com.apple.keylayout.danish	danish
+com.apple.keylayout.turkish-qwerty-pc	turkish q
+com.apple.keylayout.czech-qwerty	czech - qwerty
+com.apple.keylayout.czech	czech
+com.apple.keylayout.estonian	estonian
+com.apple.keylayout.hungarian-qwerty	hungarian - qwerty
+com.apple.keylayout.hungarian	hungarian
+com.apple.keylayout.latvian	latvian
+com.apple.keylayout.lithuanian	lithuanian
+com.apple.keylayout.polishpro	polish
+com.apple.keylayout.polish	polish - qwertz
+com.apple.keylayout.slovak	slovak
+com.apple.keylayout.slovak-qwerty	slovak - qwerty
+com.apple.keylayout.bulgarian-phonetic	bulgarian - qwerty
+com.apple.keylayout.bulgarian	bulgarian - standard
+com.apple.keylayout.byelorussian	belarusian
+com.apple.keylayout.macedonian	macedonian
+com.apple.keylayout.russian-phonetic	russian - qwerty
+com.apple.keylayout.russian	russian
+com.apple.keylayout.russianwin	russian - pc
+com.apple.keylayout.serbian	serbian
+com.apple.keylayout.ukrainian-pc	ukrainian
+com.apple.keylayout.ukrainian	ukrainian - legacy
+com.apple.keylayout.colemak	colemak
+com.apple.keylayout.dvorak-left	dvorak - left-handed
+com.apple.keylayout.dvorak-right	dvorak - right-handed
+com.apple.keylayout.dvorak	dvorak
+com.apple.keylayout.dvorak-qwertycmd	dvorak - qwerty ⌘
+com.apple.keylayout.kana	kana
+com.apple.keylayout.abc-azerty	abc - azerty
+com.apple.keylayout.abc-qwertz	abc - qwertz
+com.apple.keylayout.abc	abc
+com.apple.keylayout.australian	australian
+com.apple.keylayout.austrian	austrian
+com.apple.keylayout.belgian	belgian
+com.apple.keylayout.brazilian-abnt2	brazilian - abnt2
+com.apple.keylayout.brazilian-pro	brazilian
+com.apple.keylayout.brazilian	brazilian - legacy
+com.apple.keylayout.british-pc	british - pc
+com.apple.keylayout.british	british
+com.apple.keylayout.canadian-csa	canadian - csa
+com.apple.keylayout.canadian	canadian
+com.apple.keylayout.canadianfrench-pc	canadian - pc
+com.apple.keylayout.dutch	dutch
+com.apple.keylayout.finnish	finnish
+com.apple.keylayout.french-pc	french - pc
+com.apple.keylayout.french-numerical	french - numerical
+com.apple.keylayout.french	french
+com.apple.keylayout.german	german
+com.apple.keylayout.irish	irish
+com.apple.keylayout.italian-pro	italian
+com.apple.keylayout.italian	italian - qzerty
+com.apple.keylayout.norwegian	norwegian
+com.apple.keylayout.portuguese	portuguese
+com.apple.keylayout.spanish-iso	spanish
+com.apple.keylayout.spanish	spanish - legacy
+com.apple.keylayout.swedish-pro	swedish
+com.apple.keylayout.swedish	swedish - legacy
+com.apple.keylayout.swissfrench	swiss french
+com.apple.keylayout.swissgerman	swiss german
+com.apple.keylayout.tongan	tongan
+com.apple.keylayout.us	us
+com.apple.keylayout.usinternational-pc	us international - pc
+com.apple.keylayout.2sethangul	2-set korean
+com.apple.keylayout.abc-india	abc - india
+com.apple.keylayout.adlam-qwerty	adlam
+com.apple.keylayout.afghandari	afghan dari
+com.apple.keylayout.afghanpashto	afghan pashto
+com.apple.keylayout.afghanuzbek	afghan uzbek
+com.apple.keylayout.akan	akan
+com.apple.keylayout.albanian	albanian
+com.apple.keylayout.anjal	anjal
+com.apple.keylayout.apache	apache
+com.apple.keylayout.arabic-azerty	arabic - azerty
+com.apple.keylayout.arabic-northafrica	arabic - 123
+com.apple.keylayout.arabic-qwerty	arabic - qwerty
+com.apple.keylayout.arabic	arabic
+com.apple.keylayout.arabicpc	arabic - pc
+com.apple.keylayout.armenian-hmqwerty	armenian - hm qwerty
+com.apple.keylayout.armenian-westernqwerty	armenian - western qwerty
+com.apple.keylayout.assamese	assamese - standard
+com.apple.keylayout.azeri	azeri
+com.apple.keylayout.bangla-qwerty	bangla - qwerty
+com.apple.keylayout.bangla	bangla - standard
+com.apple.keylayout.bodo	bodo - standard
+com.apple.keylayout.cangjiekeyboard	cangjie
+com.apple.keylayout.cherokee-nation	cherokee - nation
+com.apple.keylayout.cherokee-qwerty	cherokee - qwerty
+com.apple.keylayout.chickasaw	chickasaw
+com.apple.keylayout.choctaw	choctaw
+com.apple.keylayout.chuvash	chuvash
+com.apple.keylayout.croatian	croatian - qwerty
+com.apple.keylayout.croatian-pc	croatian - qwertz
+com.apple.keylayout.devanagari-qwerty	devanagari - qwerty
+com.apple.keylayout.devanagari	hindi - standard
+com.apple.keylayout.dhivehi-qwerty	dhivehi
+com.apple.keylayout.dogri	dogri - standard
+com.apple.keylayout.dzongkha	dzongkha
+com.apple.keylayout.faroese	faroese
+com.apple.keylayout.finnishextended	finnish - extended
+com.apple.keylayout.finnishsami-pc	finnish sámi - pc
+com.apple.keylayout.geez-qwerty	geʽez
+com.apple.keylayout.georgian-qwerty	georgian - qwerty
+com.apple.keylayout.german-din-2137	german - standard
+com.apple.keylayout.greek	greek
+com.apple.keylayout.greekpolytonic	greek - polytonic
+com.apple.keylayout.gujarati-qwerty	gujarati - qwerty
+com.apple.keylayout.gujarati	gujarati - standard
+com.apple.keylayout.gurmukhi-qwerty	gurmukhi - qwerty
+com.apple.keylayout.gurmukhi	gurmukhi - standard
+com.apple.keylayout.hanifi-rohingya-qwerty	hanifi rohingya
+com.apple.keylayout.hausa	hausa
+com.apple.keylayout.hawaiian	hawaiian
+com.apple.keylayout.hebrew-qwerty	hebrew - qwerty
+com.apple.keylayout.hebrew	hebrew
+com.apple.keylayout.hebrew-pc	hebrew - pc
+com.apple.keylayout.icelandic	icelandic
+com.apple.keylayout.igbo	igbo
+com.apple.keylayout.ingush	ingush
+com.apple.keylayout.inuktitut-nattilik	inuktitut - nattilik
+com.apple.keylayout.inuktitut-nunavut	inuktitut - nunavut
+com.apple.keylayout.inuktitut-nutaaq	inuktitut - nutaaq
+com.apple.keylayout.inuktitut-qwerty	inuktitut - qwerty
+com.apple.keylayout.inuttitutnunavik	inuktitut - nunavik
+com.apple.keylayout.irishextended	irish - extended
+com.apple.keylayout.jawi-qwerty	jawi
+com.apple.keylayout.kabyle-azerty	kabyle - azerty
+com.apple.keylayout.kabyle-qwerty	kabyle - qwerty
+com.apple.keylayout.kannada-qwerty	kannada - qwerty
+com.apple.keylayout.kannada	kannada - standard
+com.apple.keylayout.kashmiri-devanagari	kashmiri (devanagari) - standard
+com.apple.keylayout.kazakh	kazakh
+com.apple.keylayout.khmer	khmer
+com.apple.keylayout.konkani	konkani - standard
+com.apple.keylayout.kurdish-kurmanji	kurmanji kurdish
+com.apple.keylayout.kurdish-sorani	sorani kurdish
+com.apple.keylayout.kyrgyz-cyrillic	kyrgyz
+com.apple.keylayout.lao	lao
+com.apple.keylayout.latinamerican	latin american
+com.apple.keylayout.maithili	maithili - standard
+com.apple.keylayout.malayalam-qwerty	malayalam - qwerty
+com.apple.keylayout.malayalam	malayalam - standard
+com.apple.keylayout.maltese	maltese
+com.apple.keylayout.mandaic-arabic	mandaic - arabic
+com.apple.keylayout.mandaic-qwerty	mandaic - qwerty
+com.apple.keylayout.manipuri-bengali	manipuri (bengali) - standard
+com.apple.keylayout.manipuri-meeteimayek	manipuri (meetei mayek)
+com.apple.keylayout.maori	māori
+com.apple.keylayout.marathi	marathi - standard
+com.apple.keylayout.mikmaw	mi’kmaq
+com.apple.keylayout.mongolian-cyrillic	mongolian
+com.apple.keylayout.myanmar-qwerty	myanmar - qwerty
+com.apple.keylayout.myanmar	myanmar
+com.apple.keylayout.nko-qwerty	n’ko - qwerty
+com.apple.keylayout.nko	n’ko
+com.apple.keylayout.navajo	navajo
+com.apple.keylayout.nepali-is16350	nepali - standard (india)
+com.apple.keylayout.nepali	nepali - remington
+com.apple.keylayout.norwegianextended	norwegian - extended
+com.apple.keylayout.norwegiansami-pc	norwegian sámi - pc
+com.apple.keylayout.oriya-qwerty	odia - qwerty
+com.apple.keylayout.oriya	odia - standard
+com.apple.keylayout.osage-qwerty	osage - qwerty
+com.apple.keylayout.pahawh-hmong	hmong (pahawh)
+com.apple.keylayout.persian-qwerty	persian - qwerty
+com.apple.keylayout.persian	persian - legacy
+com.apple.keylayout.persian-isiri2901	persian - standard
+com.apple.keylayout.rejang-qwerty	rejang - qwerty
+com.apple.keylayout.romanian-standard	romanian - standard
+com.apple.keylayout.romanian	romanian
+com.apple.keylayout.sami-pc	sámi - pc
+com.apple.keylayout.inarisami	inari sámi
+com.apple.keylayout.julevsami-norway	lule sámi (norway)
+com.apple.keylayout.julevsami	lule sámi (sweden)
+com.apple.keylayout.kildinsami	kildin sámi
+com.apple.keylayout.northernsami	north sámi
+com.apple.keylayout.pitesami	pite sámi
+com.apple.keylayout.skoltsami	skolt sámi
+com.apple.keylayout.southernsami	south sámi
+com.apple.keylayout.umesami	ume sámi
+com.apple.keylayout.samoan	samoan
+com.apple.keylayout.sanskrit	sanskrit - standard
+com.apple.keylayout.santali-devanagari	santali (devanagari) - standard
+com.apple.keylayout.santali-olchiki	santali (ol chiki)
+com.apple.keylayout.serbian-latin	serbian (latin)
+com.apple.keylayout.sindhi-devanagari	sindhi (devanagari) - standard
+com.apple.keylayout.sindhi	sindhi
+com.apple.keylayout.sinhala-qwerty	sinhala - qwerty
+com.apple.keylayout.sinhala	sinhala
+com.apple.keylayout.slovenian	slovenian
+com.apple.keylayout.swedishsami-pc	swedish sámi - pc
+com.apple.keylayout.syriac-arabic	syriac - arabic
+com.apple.keylayout.syriac-qwerty	syriac - qwerty
+com.apple.keylayout.tajik-cyrillic	tajik (cyrillic)
+com.apple.keylayout.tamil99	tamil99
+com.apple.keylayout.telugu-qwerty	telugu - qwerty
+com.apple.keylayout.telugu	telugu - standard
+com.apple.keylayout.thai-pattachote	thai - pattachote
+com.apple.keylayout.thai	thai
+com.apple.keylayout.tibetanotanius	tibetan - otani
+com.apple.keylayout.tibetan-qwerty	tibetan - qwerty
+com.apple.keylayout.tibetan-wylie	tibetan - wylie
+com.apple.keylayout.tifinagh-azerty	tifinagh
+com.apple.keylayout.transliteration-bn	bangla - transliteration
+com.apple.keylayout.transliteration-gu	gujarati - transliteration
+com.apple.keylayout.transliteration-hi	hindi - transliteration
+com.apple.keylayout.transliteration-kn	kannada - transliteration
+com.apple.keylayout.transliteration-ml	malayalam - transliteration
+com.apple.keylayout.transliteration-mr	marathi - transliteration
+com.apple.keylayout.transliteration-pa	punjabi - transliteration
+com.apple.keylayout.transliteration-ta	tamil - transliteration
+com.apple.keylayout.transliteration-te	telugu - transliteration
+com.apple.keylayout.transliteration-ur	urdu - transliteration
+com.apple.keylayout.turkish-qwerty	turkish q - legacy
+com.apple.keylayout.turkish-standard	turkish f
+com.apple.keylayout.turkish	turkish f - legacy
+com.apple.keylayout.turkmen	turkmen
+com.apple.keylayout.usextended	abc - extended
+com.apple.keylayout.ukrainian-qwerty	ukrainian - qwerty
+com.apple.keylayout.unicodehexinput	unicode hex input
+com.apple.keylayout.urdu	urdu
+com.apple.keylayout.uyghur	uyghur
+com.apple.keylayout.uzbek-cyrillic	uzbek (cyrillic)
+com.apple.keylayout.vietnamese	vietnamese
+com.apple.keylayout.wancho-qwerty	wancho - qwerty
+com.apple.keylayout.welsh	welsh
+com.apple.keylayout.wolastoqey	wolastoqey
+com.apple.keylayout.yiddish-qwerty	yiddish - qwerty
+com.apple.keylayout.yoruba	yoruba
+com.apple.keylayout.zhuyinbopomofo	zhuyin
+com.apple.keylayout.gjcromaja	gongjincheong romaja
+com.apple.keylayout.390hangul	3-set korean (390)
+com.apple.keylayout.hncromaja	hnc romaja
+com.apple.keylayout.3sethangul	3-set korean
+com.apple.keylayout.pinyinkeyboard	pinyin - simplified
+com.apple.keylayout.wubihuakeyboard	stroke - simplified
+com.apple.keylayout.traditionalwubihuakeyboard	stroke - cantonese
+com.apple.keylayout.traditionalwubihuakeyboard	stroke - traditional
+com.apple.keylayout.zhuyineten	zhuyin eten - traditional
+com.apple.keylayout.traditionalpinyinkeyboard	pinyin - traditional
+com.apple.keylayout.wubihuakeyboard	wubihuakeyboard

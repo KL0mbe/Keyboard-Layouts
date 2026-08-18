@@ -1,0 +1,103 @@
+Hungarian.keylayout
+Swedish.keylayout
+Icelandic.keylayout
+Inuttitut Nunavik.keylayout
+Canadian.keylayout
+Slovak.keylayout
+Serbian-Latin.keylayout
+Arabic-QWERTY.keylayout
+Turkish.keylayout
+French - numerical.keylayout
+Portuguese.keylayout
+Swiss French.keylayout
+Hebrew-QWERTY.keylayout
+German.keylayout
+Azeri.keylayout
+Russian.keylayout
+Norwegian Extended.keylayout
+Ukrainian.keylayout
+Logitech Swedish.keylayout
+Faroese.keylayout
+Romanian.keylayout
+Logitech Danish.keylayout
+Afghan Uzbek.keylayout
+Maori.keylayout
+Brazilian.keylayout
+Estonian.keylayout
+Logitech Finnish.keylayout
+Inuktitut-Nunavut.keylayout
+Australian.keylayout
+Logitech Spanish.keylayout
+Finnish Extended.keylayout
+French.keylayout
+Inuktitut-QWERTY.keylayout
+Belgian.keylayout
+Lithuanian.keylayout
+Italian - Pro.keylayout
+Logitech Canadian.keylayout
+Bulgarian.keylayout
+Italian.keylayout
+Byelorussian.keylayout
+Afghan Pashto.keylayout
+Spanish.keylayout
+Armenian-HM QWERTY.keylayout
+Greek.keylayout
+Spanish - ISO.keylayout
+Finnish.keylayout
+Logitech Italian.keylayout
+Hebrew.keylayout
+Thai.keylayout
+Greek Polytonic.keylayout
+Swiss German.keylayout
+Logitech Belgian.keylayout
+Gurmukhi-QWERTY.keylayout
+Austrian.keylayout
+U.S..keylayout
+Gurmukhi.keylayout
+Macedonian.keylayout
+Latvian.keylayout
+US Extended.keylayout
+Thai-PattaChote.keylayout
+Slovenian.keylayout
+Devanagari-QWERTY.keylayout
+Norwegian.keylayout
+Irish Extended.keylayout
+Swedish - Pro.keylayout
+Inuktitut-Nutaaq.keylayout
+Canadian - CSA.keylayout
+Persian-ISIRI 2901.keylayout
+Gujarati.keylayout
+Logitech U.K. Intl.keylayout
+Serbian.keylayout
+Danish.keylayout
+Logitech Swiss French.keylayout
+Czech-QWERTY.keylayout
+Dutch.keylayout
+Devanagari.keylayout
+Persian.keylayout
+Northern Sami.keylayout
+Nepali.keylayout
+Armenian-Western QWERTY.keylayout
+Cherokee-Nation.keylayout
+Bulgarian - Phonetic.keylayout
+Cherokee-QWERTY.keylayout
+Logitech German.keylayout
+Polish.keylayout
+Logitech Portuguese.keylayout
+Logitech Swiss German.keylayout
+British.keylayout
+Logitech US Intl.keylayout
+Irish.keylayout
+Arabic.keylayout
+Vietnamese.keylayout
+Turkish-QWERTY-PC.keylayout
+Logitech Norwegian.keylayout
+Czech.keylayout
+Turkish-QWERTY.keylayout
+Croatian.keylayout
+Welsh.keylayout
+Gujarati-QWERTY.keylayout
+Afghan Dari.keylayout
+Russian - Phonetic.keylayout
+Hawaiian.keylayout
+Polish Pro.keylayout
