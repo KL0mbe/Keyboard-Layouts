@@ -2,13 +2,13 @@ from pathlib import Path
 import shutil
 import xml.etree.ElementTree as ET
 import csv
-import config
-from cleanAppleKeyLayoutNames import build_apple_id_dict
+from cleanAppleKeyLayoutNames import *
 import pycountry as pc
 
 path = Path("../Cleaned Apple Keyboard layouts/Test xml override")
 
 appleIDsDict = build_apple_id_dict()
+appleIDSuffix = build_apple_id_suffix()
 matches = {}
 unMatches = []
 
@@ -62,9 +62,11 @@ with open("Layouts.csv", "w", newline="") as f:
                     finalKeys.append(keys)
             if finalKeys:
                 if len(finalKeys) > 1:
-                    print(
-                        f"MORE THAN ONE COMBO MATCH {finalKeys} IN MAP INDEX: {mapIndex}"
-                    )
+                    Placeholder = None
+                    # KEEP for V2 No Errors for v1 so commented out
+                    # print(
+                    #     f"{root.get('name')} MORE THAN ONE COMBO MATCH {finalKeys} IN MAP INDEX: {mapIndex}"
+                    # )
                 index[int(mapIndex)] = finalKeys[0]
 
         baseIndex = next((key for key, value in index.items() if value == set()), None)
@@ -74,11 +76,16 @@ with open("Layouts.csv", "w", newline="") as f:
         # Associate layouts with their appleIDs
         name = config.clean_str(root.get("name"))
         appleID = appleIDsDict.get(name)
-        if not appleID:
+        isSuffix = False
+        if appleID is None:
+            appleID = appleIDSuffix.get(name)
+            isSuffix = True
+        if appleID is None:
             unMatches.append(name)
         else:
-            matches[name] = appleID
+            matches[name] = (appleID, "Stem" if isSuffix is True else "Display")
 
+        actionDict = {}
         # get the base keys
         for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{baseIndex}']"):
             code = key.get("code")
@@ -88,8 +95,8 @@ with open("Layouts.csv", "w", newline="") as f:
                 if not action:
                     continue
 
-                actionElement = root.find(
-                    f"actions/action[@id='{action}']/when[@state='none']"
+                actionDict[action] = actionElement = root.find(
+                    f'actions/action[@id="{action}"]/when[@state="none"]'
                 )
 
                 if actionElement is None:
@@ -115,3 +122,5 @@ with open("Layouts.csv", "w", newline="") as f:
 with open(f"../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:
         noMatch.write(f"keyLayout {name} had no match in the list of appleIDs\n")
+
+print(matches.keys())
