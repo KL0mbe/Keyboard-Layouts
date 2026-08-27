@@ -1,0 +1,90 @@
+platform_id,language_id,country_id,layout_id,klo,klid,apple_id,cldr,status_id
+1,hu,Magyarország,qwertz,m-hu-HU,,com.apple.keylayout.Hungarian,,active
+1,sv,Sverige,qwerty,m-sv-SE,,com.apple.keylayout.Swedish,,active
+1,is,Ísland,qwerty,m-is-IS,,com.apple.keylayout.Icelandic,,active
+1,iu,ᑲᓇᑕᒥ,qwerty,m-iu-CA,,com.apple.keylayout.InuttitutNunavik,,active
+1,en,Canada,qwerty,m-en-CA,,com.apple.keylayout.Canadian,,active
+1,sk,Slovensko,qwertz,m-sk-SK,,com.apple.keylayout.Slovak,,active
+1,sr,Србија,qwerty,m-sr-RS,,com.apple.keylayout.Serbian-Latin,,active
+1,ar,X,other,m-ar-X,,com.apple.keylayout.Arabic-QWERTY,,active
+1,tr,Türkiye,fgğıod,m-tr-TR,,com.apple.keylayout.Turkish,,active
+1,fr,France,azerty,m-fr-FR,,com.apple.keylayout.French-numerical,,active
+1,pt,Portugal,qwerty,m-pt-PT,,com.apple.keylayout.Portuguese,,active
+1,fr,Suisse,qwertz,m-fr-CH,,com.apple.keylayout.SwissFrench,,active
+1,he,X,other,m-he-X,,com.apple.keylayout.Hebrew-QWERTY,,active
+1,de,Deutschland,qwertz,m-de-DE,,com.apple.keylayout.German,,active
+1,az,Azərbaycan,other,m-az-AZ,,com.apple.keylayout.Azeri,,active
+1,ru,Россия,other,m-ru-RU,,com.apple.keylayout.Russian,,active
+1,no,Norge,qwerty,m-no-NO,,com.apple.keylayout.NorwegianExtended,,active
+1,uk,Україна,other,m-uk-UA,,com.apple.keylayout.Ukrainian-PC,,active
+1,fo,Føroyar,qwerty,m-fo-FO,,com.apple.keylayout.Faroese,,active
+1,ro,România,qwerty,m-ro-RO,,com.apple.keylayout.Romanian,,active
+1,uz,Afgʻoniston,other,m-uz-AF,,com.apple.keylayout.AfghanUzbek,,active
+1,mi,Aotearoa,qwerty,m-mi-NZ,,com.apple.keylayout.Maori,,active
+1,pt,Brasil,qwerty,m-pt-BR,,com.apple.keylayout.Brazilian-Pro,,active
+1,et,Eesti,qwerty,m-et-EE,,com.apple.keylayout.Estonian,,active
+1,iu,ᑲᓇᑕᒥ,qwerty,m-iu-CA-1,,com.apple.keylayout.Inuktitut-Nunavut,,active
+1,en,Australia,qwerty,m-en-AU,,com.apple.keylayout.Australian,,active
+1,fi,Suomi,qwerty,m-fi-FI,,com.apple.keylayout.FinnishExtended,,active
+1,fr,France,azerty,m-fr-FR-1,,com.apple.keylayout.French,,active
+1,iu,ᑲᓇᑕᒥ,qwerty,m-iu-CA-2,,com.apple.keylayout.Inuktitut-QWERTY,,active
+1,nl,België,azerty,m-nl-BE,,com.apple.keylayout.Belgian,,active
+1,lt,Lietuva,qwerty,m-lt-LT,,com.apple.keylayout.Lithuanian,,active
+1,it,Italia,qwerty,m-it-IT,,com.apple.keylayout.Italian-Pro,,active
+1,bg,България,other,m-bg-BG,,com.apple.keylayout.Bulgarian,,active
+1,it,Italia,other,m-it-IT-1,,com.apple.keylayout.Italian,,active
+1,be,Беларусь,other,m-be-BY,,com.apple.keylayout.Byelorussian,,active
+1,ps,افغانستان,other,m-ps-AF,,com.apple.keylayout.AfghanPashto,,active
+1,es,X,qwerty,m-es-X,,com.apple.keylayout.Spanish,,active
+1,hy,Հայաստան,other,m-hy-AM,,com.apple.keylayout.Armenian-HMQWERTY,,active
+1,el,Ελλάδα,other,m-el-GR,,com.apple.keylayout.Greek,,active
+1,es,X,qwerty,m-es-X-1,,com.apple.keylayout.Spanish-ISO,,active
+1,fi,Suomi,qwerty,m-fi-FI-1,,com.apple.keylayout.Finnish,,active
+1,he,X,other,m-he-X-1,,com.apple.keylayout.Hebrew,,active
+1,th,ไทย,other,m-th-TH,,com.apple.keylayout.Thai,,active
+1,el,Ελλάδα,other,m-el-GR-1,,com.apple.keylayout.GreekPolytonic,,active
+1,de,Schweiz,qwertz,m-de-CH,,com.apple.keylayout.SwissGerman,,active
+1,pa,ਭਾਰਤ,other,m-pa-IN,,com.apple.keylayout.Gurmukhi-QWERTY,,active
+1,de,Österreich,qwertz,m-de-AT,,com.apple.keylayout.Austrian,,active
+1,en,United States,qwerty,m-en-US,,com.apple.keylayout.US,,active
+1,pa,ਭਾਰਤ,other,m-pa-IN-1,,com.apple.keylayout.Gurmukhi,,active
+1,mk,Северна Македонија,other,m-mk-MK,,com.apple.keylayout.Macedonian,,active
+1,lv,Latvija,qwerty,m-lv-LV,,com.apple.keylayout.Latvian,,active
+1,en,United States,qwerty,m-en-US-1,,com.apple.keylayout.USExtended,,active
+1,th,ไทย,other,m-th-TH-1,,com.apple.keylayout.Thai-PattaChote,,active
+1,sl,Slovenija,qwerty,m-sl-SI,,com.apple.keylayout.Slovenian,,active
+1,hi,भारत,other,m-hi-IN,,com.apple.keylayout.Devanagari-QWERTY,,active
+1,no,Norge,qwerty,m-no-NO-1,,com.apple.keylayout.Norwegian,,active
+1,ga,Éire,qwerty,m-ga-IE,,com.apple.keylayout.IrishExtended,,active
+1,sv,Sverige,qwerty,m-sv-SE-1,,com.apple.keylayout.Swedish-Pro,,active
+1,iu,ᑲᓇᑕᒥ,qwerty,m-iu-CA-3,,com.apple.keylayout.Inuktitut-Nutaaq,,active
+1,fr,Canada,qwerty,m-fr-CA,,com.apple.keylayout.Canadian-CSA,,active
+1,fa,ایران,other,m-fa-IR,,com.apple.keylayout.Persian-ISIRI2901,,active
+1,gu,ભારત,other,m-gu-IN,,com.apple.keylayout.Gujarati,,active
+1,sr,Србија,other,m-sr-RS-1,,com.apple.keylayout.Serbian,,active
+1,da,Danmark,qwerty,m-da-DK,,com.apple.keylayout.Danish,,active
+1,cs,Česko,qwerty,m-cs-CZ,,com.apple.keylayout.Czech-QWERTY,,active
+1,nl,Nederland,qwerty,m-nl-NL,,com.apple.keylayout.Dutch,,active
+1,hi,भारत,other,m-hi-IN-1,,com.apple.keylayout.Devanagari,,active
+1,fa,ایران,other,m-fa-IR-1,,com.apple.keylayout.Persian,,active
+1,se,X,other,m-se-X,,com.apple.keylayout.NorthernSami,,active
+1,ne,नेपाल,other,m-ne-NP,,com.apple.keylayout.Nepali,,active
+1,hy,Հայաստան,other,m-hy-AM-1,,com.apple.keylayout.Armenian-WesternQWERTY,,active
+1,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,qwerty,m-chr-US,,com.apple.keylayout.Cherokee-Nation,,active
+1,bg,България,other,m-bg-BG-1,,com.apple.keylayout.Bulgarian-Phonetic,,active
+1,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,qwerty,m-chr-US-1,,com.apple.keylayout.Cherokee-QWERTY,,active
+1,pl,Polska,qwertz,m-pl-PL,,com.apple.keylayout.Polish,,active
+1,en,United Kingdom,qwerty,m-en-GB,,com.apple.keylayout.British,,active
+1,ga,Éire,qwerty,m-ga-IE-1,,com.apple.keylayout.Irish,,active
+1,ar,X,other,m-ar-X-1,,com.apple.keylayout.Arabic,,active
+1,vi,Việt Nam,other,m-vi-VN,,com.apple.keylayout.Vietnamese,,active
+1,tr,Türkiye,qwerty,m-tr-TR-1,,com.apple.keylayout.Turkish-QWERTY-PC,,active
+1,cs,Česko,qwertz,m-cs-CZ-1,,com.apple.keylayout.Czech,,active
+1,tr,Türkiye,qwerty,m-tr-TR-2,,com.apple.keylayout.Turkish-QWERTY,,active
+1,hr,Hrvatska,qwerty,m-hr-HR,,com.apple.keylayout.Croatian,,active
+1,cy,Y Deyrnas Unedig,qwerty,m-cy-GB,,com.apple.keylayout.Welsh,,active
+1,gu,ભારત,other,m-gu-IN-1,,com.apple.keylayout.Gujarati-QWERTY,,active
+1,fa,افغانستان,other,m-fa-AF,,com.apple.keylayout.AfghanDari,,active
+1,ru,Россия,other,m-ru-RU-1,,com.apple.keylayout.Russian-Phonetic,,active
+1,haw,ʻAmelika Hui Pū ʻIa,qwerty,m-haw-US,,com.apple.keylayout.Hawaiian,,active
+1,pl,Polska,qwerty,m-pl-PL-1,,com.apple.keylayout.PolishPro,,active

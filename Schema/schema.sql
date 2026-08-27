@@ -58,7 +58,6 @@ layout_id INTEGER NOT NULL REFERENCES letter_layouts(id),
 standard_id INTEGER NOT NULL REFERENCES layout_standards(id),
 status_id INTEGER NOT NULL REFERENCES layout_status(id),
 klo TEXT NOT NULL UNIQUE,
-klo1 TEXT NOT NULL UNIQUE, -- with the letter layout in the code until i can decide which is better
 klid TEXT,
 apple_id TEXT,
 cldr TEXT,

@@ -1,1 +1,90 @@
-platform_id,language_id,country_id,layout_id,standard_id,klo,klo1,klid,apple_id,cldr,os_version,status_id
+platform_id,language_id,country_id,layout_id,klo,klid,apple_id,cldr,status_id
+1,hu,"Country(alpha_2='HU', alpha_3='HUN', flag='🇭🇺', name='Hungary', numeric='348', official_name='Hungary')",qwertz,m-hu-HU,,com.apple.keylayout.Hungarian,,active
+1,sv,"Country(alpha_2='SE', alpha_3='SWE', flag='🇸🇪', name='Sweden', numeric='752', official_name='Kingdom of Sweden')",qwerty,m-sv-SE,,com.apple.keylayout.Swedish-Pro,,active
+1,is,"Country(alpha_2='IS', alpha_3='ISL', flag='🇮🇸', name='Iceland', numeric='352', official_name='Republic of Iceland')",qwerty,m-is-IS,,com.apple.keylayout.Icelandic,,active
+1,iu,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-iu-CA,,com.apple.keylayout.InuttitutNunavik,,active
+1,en,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-en-CA,,com.apple.keylayout.Canadian,,active
+1,sk,"Country(alpha_2='SK', alpha_3='SVK', flag='🇸🇰', name='Slovakia', numeric='703', official_name='Slovak Republic')",qwertz,m-sk-SK,,com.apple.keylayout.Slovak,,active
+1,sr,"Country(alpha_2='RS', alpha_3='SRB', flag='🇷🇸', name='Serbia', numeric='688', official_name='Republic of Serbia')",qwerty,m-sr-RS,,com.apple.keylayout.Serbian-Latin,,active
+1,ar,X,قشعرتط,m-ar-X,,com.apple.keylayout.Arabic-QWERTY,,active
+1,tr,"Country(alpha_2='TR', alpha_3='TUR', flag='🇹🇷', name='Türkiye', numeric='792', official_name='Republic of Türkiye')",fgğıod,m-tr-TR,,com.apple.keylayout.Turkish,,active
+1,fr,"Country(alpha_2='FR', alpha_3='FRA', flag='🇫🇷', name='France', numeric='250', official_name='French Republic')",azerty,m-fr-FR,,com.apple.keylayout.French-numerical,,active
+1,pt,"Country(alpha_2='PT', alpha_3='PRT', flag='🇵🇹', name='Portugal', numeric='620', official_name='Portuguese Republic')",qwerty,m-pt-PT,,com.apple.keylayout.Portuguese,,active
+1,fr,"Country(alpha_2='CH', alpha_3='CHE', flag='🇨🇭', name='Switzerland', numeric='756', official_name='Swiss Confederation')",qwertz,m-fr-CH,,com.apple.keylayout.SwissFrench,,active
+1,he,X,קשערתט,m-he-X,,com.apple.keylayout.Hebrew-QWERTY,,active
+1,de,"Country(alpha_2='DE', alpha_3='DEU', flag='🇩🇪', name='Germany', numeric='276', official_name='Federal Republic of Germany')",qwertz,m-de-DE,,com.apple.keylayout.German,,active
+1,az,"Country(alpha_2='AZ', alpha_3='AZE', flag='🇦🇿', name='Azerbaijan', numeric='031', official_name='Republic of Azerbaijan')",qüerty,m-az-AZ,,com.apple.keylayout.Azeri,,active
+1,ru,"Country(alpha_2='RU', alpha_3='RUS', flag='🇷🇺', name='Russian Federation', numeric='643')",йцукен,m-ru-RU,,com.apple.keylayout.Russian,,active
+1,no,"Country(alpha_2='NO', alpha_3='NOR', flag='🇳🇴', name='Norway', numeric='578', official_name='Kingdom of Norway')",qwerty,m-no-NO,,com.apple.keylayout.NorwegianExtended,,active
+1,uk,"Country(alpha_2='UA', alpha_3='UKR', flag='🇺🇦', name='Ukraine', numeric='804')",йцукен,m-uk-UA,,com.apple.keylayout.Ukrainian-PC,,active
+1,fo,"Country(alpha_2='FO', alpha_3='FRO', flag='🇫🇴', name='Faroe Islands', numeric='234')",qwerty,m-fo-FO,,com.apple.keylayout.Faroese,,active
+1,ro,"Country(alpha_2='RO', alpha_3='ROU', flag='🇷🇴', name='Romania', numeric='642')",qwerty,m-ro-RO,,com.apple.keylayout.Romanian,,active
+1,uz,"Country(alpha_2='AF', alpha_3='AFG', flag='🇦🇫', name='Afghanistan', numeric='004', official_name='Islamic Republic of Afghanistan')",ضصثقفغ,m-uz-AF,,com.apple.keylayout.AfghanUzbek,,active
+1,mi,"Country(alpha_2='NZ', alpha_3='NZL', flag='🇳🇿', name='New Zealand', numeric='554')",qwerty,m-mi-NZ,,com.apple.keylayout.Maori,,active
+1,pt,"Country(alpha_2='BR', alpha_3='BRA', flag='🇧🇷', name='Brazil', numeric='076', official_name='Federative Republic of Brazil')",qwerty,m-pt-BR,,com.apple.keylayout.Brazilian-Pro,,active
+1,et,"Country(alpha_2='EE', alpha_3='EST', flag='🇪🇪', name='Estonia', numeric='233', official_name='Republic of Estonia')",qwerty,m-et-EE,,com.apple.keylayout.Estonian,,active
+1,iu,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-iu-CA-1,,com.apple.keylayout.Inuktitut-Nunavut,,active
+1,en,"Country(alpha_2='AU', alpha_3='AUS', flag='🇦🇺', name='Australia', numeric='036')",qwerty,m-en-AU,,com.apple.keylayout.Australian,,active
+1,fi,"Country(alpha_2='FI', alpha_3='FIN', flag='🇫🇮', name='Finland', numeric='246', official_name='Republic of Finland')",qwerty,m-fi-FI,,com.apple.keylayout.FinnishExtended,,active
+1,fr,"Country(alpha_2='FR', alpha_3='FRA', flag='🇫🇷', name='France', numeric='250', official_name='French Republic')",azerty,m-fr-FR-1,,com.apple.keylayout.French,,active
+1,iu,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-iu-CA-2,,com.apple.keylayout.Inuktitut-QWERTY,,active
+1,nl,"Country(alpha_2='BE', alpha_3='BEL', flag='🇧🇪', name='Belgium', numeric='056', official_name='Kingdom of Belgium')",azerty,m-nl-BE,,com.apple.keylayout.Belgian,,active
+1,lt,"Country(alpha_2='LT', alpha_3='LTU', flag='🇱🇹', name='Lithuania', numeric='440', official_name='Republic of Lithuania')",qwerty,m-lt-LT,,com.apple.keylayout.Lithuanian,,active
+1,it,"Country(alpha_2='IT', alpha_3='ITA', flag='🇮🇹', name='Italy', numeric='380', official_name='Italian Republic')",qwerty,m-it-IT,,com.apple.keylayout.Italian-Pro,,active
+1,bg,"Country(alpha_2='BG', alpha_3='BGR', flag='🇧🇬', name='Bulgaria', numeric='100', official_name='Republic of Bulgaria')",",уеишщ",m-bg-BG,,com.apple.keylayout.Bulgarian,,active
+1,it,"Country(alpha_2='IT', alpha_3='ITA', flag='🇮🇹', name='Italy', numeric='380', official_name='Italian Republic')",qzerty,m-it-IT-1,,com.apple.keylayout.Italian-Pro,,active
+1,be,"Country(alpha_2='BY', alpha_3='BLR', flag='🇧🇾', name='Belarus', numeric='112', official_name='Republic of Belarus')",йцукен,m-be-BY,,com.apple.keylayout.Byelorussian,,active
+1,ps,"Country(alpha_2='AF', alpha_3='AFG', flag='🇦🇫', name='Afghanistan', numeric='004', official_name='Islamic Republic of Afghanistan')",ضصثقفغ,m-ps-AF,,com.apple.keylayout.AfghanPashto,,active
+1,es,X,qwerty,m-es-X,,com.apple.keylayout.Spanish-ISO,,active
+1,hy,"Country(alpha_2='AM', alpha_3='ARM', flag='🇦🇲', name='Armenia', numeric='051', official_name='Republic of Armenia')",ճւերտյ,m-hy-AM,,com.apple.keylayout.Armenian-HMQWERTY,,active
+1,el,"Country(alpha_2='GR', alpha_3='GRC', flag='🇬🇷', name='Greece', numeric='300', official_name='Hellenic Republic')",;ςερτυ,m-el-GR,,com.apple.keylayout.Greek,,active
+1,es,X,qwerty,m-es-X-1,,com.apple.keylayout.Spanish-ISO,,active
+1,fi,"Country(alpha_2='FI', alpha_3='FIN', flag='🇫🇮', name='Finland', numeric='246', official_name='Republic of Finland')",qwerty,m-fi-FI-1,,com.apple.keylayout.Finnish,,active
+1,he,X,/'קראט,m-he-X-1,,com.apple.keylayout.Hebrew,,active
+1,th,"Country(alpha_2='TH', alpha_3='THA', flag='🇹🇭', name='Thailand', numeric='764', official_name='Kingdom of Thailand')",ๆไำพะั,m-th-TH,,com.apple.keylayout.Thai,,active
+1,el,"Country(alpha_2='GR', alpha_3='GRC', flag='🇬🇷', name='Greece', numeric='300', official_name='Hellenic Republic')",;ςερτυ,m-el-GR-1,,com.apple.keylayout.GreekPolytonic,,active
+1,de,"Country(alpha_2='CH', alpha_3='CHE', flag='🇨🇭', name='Switzerland', numeric='756', official_name='Swiss Confederation')",qwertz,m-de-CH,,com.apple.keylayout.SwissGerman,,active
+1,pa,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ੳਅੇਰਤਯ,m-pa-IN,,com.apple.keylayout.Gurmukhi-QWERTY,,active
+1,de,"Country(alpha_2='AT', alpha_3='AUT', flag='🇦🇹', name='Austria', numeric='040', official_name='Republic of Austria')",qwertz,m-de-AT,,com.apple.keylayout.Austrian,,active
+1,en,"Country(alpha_2='US', alpha_3='USA', flag='🇺🇸', name='United States', numeric='840', official_name='United States of America')",qwerty,m-en-US,,com.apple.keylayout.US,,active
+1,pa,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ੌੈਾੀੂਬ,m-pa-IN-1,,com.apple.keylayout.Gurmukhi,,active
+1,mk,"Country(alpha_2='MK', alpha_3='MKD', flag='🇲🇰', name='North Macedonia', numeric='807', official_name='Republic of North Macedonia')",љњертѕ,m-mk-MK,,com.apple.keylayout.Macedonian,,active
+1,lv,"Country(alpha_2='LV', alpha_3='LVA', flag='🇱🇻', name='Latvia', numeric='428', official_name='Republic of Latvia')",qwerty,m-lv-LV,,com.apple.keylayout.Latvian,,active
+1,en,"Country(alpha_2='US', alpha_3='USA', flag='🇺🇸', name='United States', numeric='840', official_name='United States of America')",qwerty,m-en-US-1,,com.apple.keylayout.USExtended,,active
+1,th,"Country(alpha_2='TH', alpha_3='THA', flag='🇹🇭', name='Thailand', numeric='764', official_name='Kingdom of Thailand')",็ตยอร่,m-th-TH-1,,com.apple.keylayout.Thai-PattaChote,,active
+1,sl,"Country(alpha_2='SI', alpha_3='SVN', flag='🇸🇮', name='Slovenia', numeric='705', official_name='Republic of Slovenia')",qwerty,m-sl-SI,,com.apple.keylayout.Slovenian,,active
+1,hi,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ॅअेरतय,m-hi-IN,,com.apple.keylayout.Devanagari-QWERTY,,active
+1,no,"Country(alpha_2='NO', alpha_3='NOR', flag='🇳🇴', name='Norway', numeric='578', official_name='Kingdom of Norway')",qwerty,m-no-NO-1,,com.apple.keylayout.Norwegian,,active
+1,ga,"Country(alpha_2='IE', alpha_3='IRL', flag='🇮🇪', name='Ireland', numeric='372')",qwerty,m-ga-IE,,com.apple.keylayout.IrishExtended,,active
+1,sv,"Country(alpha_2='SE', alpha_3='SWE', flag='🇸🇪', name='Sweden', numeric='752', official_name='Kingdom of Sweden')",qwerty,m-sv-SE-1,,com.apple.keylayout.Swedish-Pro,,active
+1,iu,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-iu-CA-3,,com.apple.keylayout.Inuktitut-Nutaaq,,active
+1,fr,"Country(alpha_2='CA', alpha_3='CAN', flag='🇨🇦', name='Canada', numeric='124')",qwerty,m-fr-CA,,com.apple.keylayout.Canadian-CSA,,active
+1,fa,"Country(alpha_2='IR', alpha_3='IRN', common_name='Iran', flag='🇮🇷', name='Iran, Islamic Republic of', numeric='364', official_name='Islamic Republic of Iran')",ضصثقفغ,m-fa-IR,,com.apple.keylayout.Persian-ISIRI2901,,active
+1,gu,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ૌૈાીૂબ,m-gu-IN,,com.apple.keylayout.Gujarati,,active
+1,sr,"Country(alpha_2='RS', alpha_3='SRB', flag='🇷🇸', name='Serbia', numeric='688', official_name='Republic of Serbia')",љњертз,m-sr-RS-1,,com.apple.keylayout.Serbian,,active
+1,da,"Country(alpha_2='DK', alpha_3='DNK', flag='🇩🇰', name='Denmark', numeric='208', official_name='Kingdom of Denmark')",qwerty,m-da-DK,,com.apple.keylayout.Danish,,active
+1,cs,"Country(alpha_2='CZ', alpha_3='CZE', flag='🇨🇿', name='Czechia', numeric='203', official_name='Czech Republic')",qwerty,m-cs-CZ,,com.apple.keylayout.Czech-QWERTY,,active
+1,nl,"Country(alpha_2='NL', alpha_3='NLD', flag='🇳🇱', name='Netherlands', numeric='528', official_name='Kingdom of the Netherlands')",qwerty,m-nl-NL,,com.apple.keylayout.Dutch,,active
+1,hi,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ौैाीूब,m-hi-IN-1,,com.apple.keylayout.Devanagari,,active
+1,fa,"Country(alpha_2='IR', alpha_3='IRN', common_name='Iran', flag='🇮🇷', name='Iran, Islamic Republic of', numeric='364', official_name='Islamic Republic of Iran')",ضصثقفغ,m-fa-IR-1,,com.apple.keylayout.Persian,,active
+1,se,X,ášertŧ,m-se-X,,com.apple.keylayout.NorthernSami,,active
+1,ne,"Country(alpha_2='NP', alpha_3='NPL', flag='🇳🇵', name='Nepal', numeric='524', official_name='Federal Democratic Republic of Nepal')",ऊधभचतथ,m-ne-NP,,com.apple.keylayout.Nepali,,active
+1,hy,"Country(alpha_2='AM', alpha_3='ARM', flag='🇦🇲', name='Armenia', numeric='051', official_name='Republic of Armenia')",խվէրդե,m-hy-AM-1,,com.apple.keylayout.Armenian-WesternQWERTY,,active
+1,chr,"Country(alpha_2='US', alpha_3='USA', flag='🇺🇸', name='United States', numeric='840', official_name='United States of America')",qwerty,m-chr-US,,com.apple.keylayout.Cherokee-Nation,,active
+1,bg,"Country(alpha_2='BG', alpha_3='BGR', flag='🇧🇬', name='Bulgaria', numeric='100', official_name='Republic of Bulgaria')",яверты,m-bg-BG-1,,com.apple.keylayout.Bulgarian-Phonetic,,active
+1,chr,"Country(alpha_2='US', alpha_3='USA', flag='🇺🇸', name='United States', numeric='840', official_name='United States of America')",qwerty,m-chr-US-1,,com.apple.keylayout.Cherokee-QWERTY,,active
+1,pl,"Country(alpha_2='PL', alpha_3='POL', flag='🇵🇱', name='Poland', numeric='616', official_name='Republic of Poland')",qwertz,m-pl-PL,,com.apple.keylayout.PolishPro,,active
+1,en,"Country(alpha_2='GB', alpha_3='GBR', flag='🇬🇧', name='United Kingdom', numeric='826', official_name='United Kingdom of Great Britain and Northern Ireland')",qwerty,m-en-GB,,com.apple.keylayout.British,,active
+1,ga,"Country(alpha_2='IE', alpha_3='IRL', flag='🇮🇪', name='Ireland', numeric='372')",qwerty,m-ga-IE-1,,com.apple.keylayout.Irish,,active
+1,ar,X,ضصثقفغ,m-ar-X-1,,com.apple.keylayout.Arabic,,active
+1,vi,"Country(alpha_2='VN', alpha_3='VNM', common_name='Vietnam', flag='🇻🇳', name='Viet Nam', numeric='704', official_name='Socialist Republic of Viet Nam')",qw?rt?,m-vi-VN,,com.apple.keylayout.Vietnamese,,active
+1,tr,"Country(alpha_2='TR', alpha_3='TUR', flag='🇹🇷', name='Türkiye', numeric='792', official_name='Republic of Türkiye')",qwerty,m-tr-TR-1,,com.apple.keylayout.Turkish-QWERTY-PC,,active
+1,cs,"Country(alpha_2='CZ', alpha_3='CZE', flag='🇨🇿', name='Czechia', numeric='203', official_name='Czech Republic')",qwertz,m-cs-CZ-1,,com.apple.keylayout.Czech,,active
+1,tr,"Country(alpha_2='TR', alpha_3='TUR', flag='🇹🇷', name='Türkiye', numeric='792', official_name='Republic of Türkiye')",qwerty,m-tr-TR-2,,com.apple.keylayout.Turkish-QWERTY,,active
+1,hr,"Country(alpha_2='HR', alpha_3='HRV', flag='🇭🇷', name='Croatia', numeric='191', official_name='Republic of Croatia')",qwerty,m-hr-HR,,com.apple.keylayout.Croatian,,active
+1,cy,"Country(alpha_2='GB', alpha_3='GBR', flag='🇬🇧', name='United Kingdom', numeric='826', official_name='United Kingdom of Great Britain and Northern Ireland')",qwerty,m-cy-GB,,com.apple.keylayout.Welsh,,active
+1,gu,"Country(alpha_2='IN', alpha_3='IND', flag='🇮🇳', name='India', numeric='356', official_name='Republic of India')",ૅઅેરતય,m-gu-IN-1,,com.apple.keylayout.Gujarati-QWERTY,,active
+1,fa,"Country(alpha_2='AF', alpha_3='AFG', flag='🇦🇫', name='Afghanistan', numeric='004', official_name='Islamic Republic of Afghanistan')",ضصثقفغ,m-fa-AF,,com.apple.keylayout.AfghanDari,,active
+1,ru,"Country(alpha_2='RU', alpha_3='RUS', flag='🇷🇺', name='Russian Federation', numeric='643')",яшерты,m-ru-RU-1,,com.apple.keylayout.Russian-Phonetic,,active
+1,haw,"Country(alpha_2='US', alpha_3='USA', flag='🇺🇸', name='United States', numeric='840', official_name='United States of America')",qwerty,m-haw-US,,com.apple.keylayout.Hawaiian,,active
+1,pl,"Country(alpha_2='PL', alpha_3='POL', flag='🇵🇱', name='Poland', numeric='616', official_name='Republic of Poland')",qwerty,m-pl-PL-1,,com.apple.keylayout.PolishPro,,active

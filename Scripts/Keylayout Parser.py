@@ -2,6 +2,8 @@ from pathlib import Path
 import shutil
 import xml.etree.ElementTree as ET
 import csv
+from babel import Locale, localedata
+import config
 from cleanAppleKeyLayoutNames import *
 import pycountry as pc
 
@@ -11,8 +13,13 @@ appleIDsDict = build_apple_id_dict()
 appleIDSuffix = build_apple_id_suffix()
 matches = {}
 unMatches = []
+kloList = []
 
-with open("Layouts.csv", "w", newline="") as f:
+countryNames = {}
+en = Locale("en")
+
+
+with open("../logs/Layouts.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(
         [
@@ -20,13 +27,10 @@ with open("Layouts.csv", "w", newline="") as f:
             "language_id",
             "country_id",
             "layout_id",
-            "standard_id",
             "klo",
-            "klo1",
             "klid",
             "apple_id",
             "cldr",
-            "os_version",
             "status_id",
         ]
     )
@@ -85,6 +89,15 @@ with open("Layouts.csv", "w", newline="") as f:
         else:
             matches[name] = (appleID, "Stem" if isSuffix is True else "Display")
 
+        # Override mismatching name -> Ids
+        def matches_override():
+            matches["swedish"] = (appleIDsDict.get("swedish-legacy"), "Override")
+            matches["italian"] = (appleIDsDict.get("italian-qzerty"), "Override")
+            matches["spanish"] = (appleIDsDict.get("spanish-legacy"), "Override")
+            matches["polish"] = (appleIDsDict.get("polish-qwertz"), "Override")
+
+        matches_override()
+
         actionDict = {}
         # get the base keys
         for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{baseIndex}']"):
@@ -112,15 +125,73 @@ with open("Layouts.csv", "w", newline="") as f:
             baseKey[int(code)] = output
 
         # set standard
-
         # add to csv
-        # platform,lang,country,layout,standard,klo,klo1,klid,apple,cldr,os,status
-        # writer.writerow(["1", pc.countries.lookup("get the country for here"), ])
+        lang = pc.languages.lookup(config.LayoutLocale.get(name).get("language"))
+        langAlpha = getattr(lang, "alpha_2", None) or lang.alpha_3
+        dictCountry = config.LayoutLocale.get(name).get("country")
+        englishCountry = None
+        nativeCountry = None
+        if dictCountry is not None:
+            country = pc.countries.lookup(dictCountry)
+            countryAlpha = country.alpha_2
+        else:
+            country = None
+            countryAlpha = "X"
 
-        # for keyMap in root.findall("keyMapSet[@id='ANSI']/keyMap"):
+        # get Country Names
+        if localedata.exists(langAlpha) and country is not None:
+            nativeCountry = Locale(langAlpha).territories.get(
+                countryAlpha, country.name
+            )
 
-with open(f"../Logs/noMatchNames.txt", "w") as noMatch:
+        if countryAlpha != "X":
+            englishCountry = en.territories.get(countryAlpha, country.name)
+            countryNames[nativeCountry] = {
+                "country": englishCountry,
+                "iso": countryAlpha,
+            }
+
+        qwertyRow = "".join(baseKey.get(code, "?") for code in config.LetterRow)
+        if qwertyRow in config.LetterLayouts:
+            layout = qwertyRow
+        else:
+            layout = "other"
+
+        baseKLO = f"m-{langAlpha}-{countryAlpha}"
+        klo = baseKLO
+        # V2: More stable way of iding klo
+        variant = 1
+        while klo in kloList:
+            klo = baseKLO + f"-{variant}"
+            variant += 1
+        kloList.append(klo)
+
+        finalAppleID = matches[name][0]
+
+        # write to a file for countries to seed country script and languages to seed language script
+
+        # platform,lang,country,layout,klo,klid,apple,cldr,status
+        writer.writerow(
+            [
+                "1",
+                langAlpha,
+                nativeCountry if country is not None else "X",
+                layout,
+                klo,
+                None,
+                finalAppleID,
+                None,
+                "active",
+            ]
+        )
+
+with open("../Logs/countries.csv", "w", newline="", encoding="utf-8") as eCountries:
+    writer = csv.writer(eCountries)
+    writer.writerow(["country", "native_name", "iso_3166"])
+    for native_name, value in countryNames.items():
+        writer.writerow([value["country"], native_name, value["iso"]])
+
+
+with open("../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:
         noMatch.write(f"keyLayout {name} had no match in the list of appleIDs\n")
-
-print(matches.keys())
