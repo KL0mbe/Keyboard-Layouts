@@ -1,3 +1,5 @@
+import unicodedata
+
 CANON = {
     "anyShift": "shift",
     "shift": "shift",
@@ -118,6 +120,17 @@ LayoutLocale = {
     "hawaiian": {"language": "hawaiian", "country": "united states"},
     "polishpro": {"language": "polish", "country": "poland"},
 }
+
+
+def get_unicode_char_data(char):
+    if not char or len(char) > 1:
+        return {"character": char, "code_point": None, "unicode_name": None}
+
+    return {
+        "character": char,
+        "code_point": f"U+{ord(char):04X}",
+        "unicode_name": unicodedata.name(char, None),
+    }
 
 
 def clean_str(string):

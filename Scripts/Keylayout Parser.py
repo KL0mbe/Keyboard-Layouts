@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import csv
 from babel import Locale, localedata
 import config
+import unicodedata
 from cleanAppleKeyLayoutNames import *
 import pycountry as pc
 
@@ -16,7 +17,10 @@ unMatches = []
 kloList = []
 
 countryNames = {}
+languages = {}
 en = Locale("en")
+
+characters = {}
 
 
 with open("../logs/Layouts.csv", "w", newline="") as f:
@@ -40,7 +44,7 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
         root = tree.getroot()
 
         baseKey = {}
-        index = {}
+        modifiersMap = {}
 
         layoutElement = root.find("layouts/layout[@first='0']")
         if layoutElement is None:
@@ -71,9 +75,11 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
                     # print(
                     #     f"{root.get('name')} MORE THAN ONE COMBO MATCH {finalKeys} IN MAP INDEX: {mapIndex}"
                     # )
-                index[int(mapIndex)] = finalKeys[0]
+                modifiersMap[int(mapIndex)] = finalKeys[0]
 
-        baseIndex = next((key for key, value in index.items() if value == set()), None)
+        baseIndex = next(
+            (key for key, value in modifiersMap.items() if value == set()), None
+        )
         if baseIndex is None:
             raise ValueError(f"no Base Index found in {file}")
 
@@ -101,7 +107,8 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
         actionDict = {}
         # get the base keys
         for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{baseIndex}']"):
-            code = key.get("code")
+            codePoint = None
+            isoCode = key.get("code")
             output = key.get("output")
             if not output:
                 action = key.get("action")
@@ -119,18 +126,29 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
                 if not actionKey:
                     continue
 
-                baseKey[int(code)] = actionKey
+                baseKey[int(isoCode)] = actionKey
+                characters[actionKey] = config.get_unicode_char_data(actionKey)
                 continue
 
-            baseKey[int(code)] = output
+            baseKey[int(isoCode)] = output
+            characters[output] = config.get_unicode_char_data(output)
 
         # set standard
         # add to csv
         lang = pc.languages.lookup(config.LayoutLocale.get(name).get("language"))
         langAlpha = getattr(lang, "alpha_2", None) or lang.alpha_3
+        locale = Locale(langAlpha)
+
         dictCountry = config.LayoutLocale.get(name).get("country")
         englishCountry = None
         nativeCountry = None
+
+        # extract languages for lang table
+        languages[langAlpha] = {
+            "name": lang.name,
+            "native_name": locale.languages.get(langAlpha),
+        }
+
         if dictCountry is not None:
             country = pc.countries.lookup(dictCountry)
             countryAlpha = country.alpha_2
@@ -144,6 +162,7 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
                 countryAlpha, country.name
             )
 
+        # extract countries for country table
         if countryAlpha != "X":
             englishCountry = en.territories.get(countryAlpha, country.name)
             countryNames[nativeCountry] = {
@@ -168,8 +187,6 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
 
         finalAppleID = matches[name][0]
 
-        # write to a file for countries to seed country script and languages to seed language script
-
         # platform,lang,country,layout,klo,klid,apple,cldr,status
         writer.writerow(
             [
@@ -191,6 +208,17 @@ with open("../Logs/countries.csv", "w", newline="", encoding="utf-8") as eCountr
     for native_name, value in countryNames.items():
         writer.writerow([value["country"], native_name, value["iso"]])
 
+with open("../Logs/languages.csv", "w", newline="", encoding="utf-8") as eLanguages:
+    writer = csv.writer(eLanguages)
+    writer.writerow(["name", "native_name", "iso_639"])
+    for isoCode, names in languages.items():
+        writer.writerow([names["name"], names["native_name"], isoCode])
+
+with open("../Logs/characters.csv", "w", newline="", encoding="utf-8") as eCharacters:
+    writer = csv.writer(eCharacters)
+    writer.writerow(["character", "code_point", "unicode_name"])
+    for char, values in characters.items():
+        writer.writerow([char, values["code_point"], values["unicode_name"]])
 
 with open("../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:
