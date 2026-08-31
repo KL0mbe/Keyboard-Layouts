@@ -18,7 +18,7 @@ CANON = {
 }
 
 
-TARGETS = (set(), {"shift"}, {"option"}, {"shift", "option"})
+TARGETS = (frozenset(), {"shift"}, {"option"}, {"shift", "option"})
 
 LetterRow = [12, 13, 14, 15, 17, 16]
 

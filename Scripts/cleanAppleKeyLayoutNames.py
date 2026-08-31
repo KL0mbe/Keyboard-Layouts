@@ -1,5 +1,4 @@
 from pathlib import Path
-
 import config
 
 file = Path("../TISNames/TestLayouts.tsv")

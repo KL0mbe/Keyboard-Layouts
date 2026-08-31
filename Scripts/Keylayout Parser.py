@@ -1,12 +1,8 @@
-from pathlib import Path
-import shutil
-import xml.etree.ElementTree as ET
-import csv
-from babel import Locale, localedata
-import config
-import unicodedata
 from cleanAppleKeyLayoutNames import *
+from babel import Locale, localedata
+import xml.etree.ElementTree as ET
 import pycountry as pc
+import csv
 
 path = Path("../Cleaned Apple Keyboard layouts/Test xml override")
 
@@ -21,7 +17,7 @@ languages = {}
 en = Locale("en")
 
 characters = {}
-
+keyCombos = {}
 
 with open("../logs/Layouts.csv", "w", newline="") as f:
     writer = csv.writer(f)
@@ -103,38 +99,51 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
             matches["polish"] = (appleIDsDict.get("polish-qwertz"), "Override")
 
         matches_override()
+        finalAppleID = matches[name][0]
 
-        actionDict = {}
         # get the base keys
-        for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{baseIndex}']"):
-            codePoint = None
-            isoCode = key.get("code")
-            output = key.get("output")
-            if not output:
-                action = key.get("action")
-                if not action:
-                    continue
+        def extract_keys(index=baseIndex, modifiers_set=frozenset()):
+            for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{index}']"):
+                virtualCode = int(key.get("code"))
+                output = key.get("output")
+                actionElement = None
+                if not output:
+                    action = key.get("action")
+                    if not action:
+                        continue
 
-                actionDict[action] = actionElement = root.find(
-                    f'actions/action[@id="{action}"]/when[@state="none"]'
-                )
+                    for act in root.findall("actions/action"):
+                        if action == act.get("id"):
+                            actionElement = act.find("when[@state='none']")
 
-                if actionElement is None:
-                    continue
+                    if actionElement is None:
+                        continue
 
-                actionKey = actionElement.get("output")
-                if not actionKey:
-                    continue
+                    actionKey = actionElement.get("output")
+                    if not actionKey:
+                        continue
 
-                baseKey[int(isoCode)] = actionKey
-                characters[actionKey] = config.get_unicode_char_data(actionKey)
+                    output = actionKey
+
+                if index == baseIndex:
+                    baseKey[virtualCode] = output
+                characters[output] = config.get_unicode_char_data(output)
+                keyCombos[(finalAppleID, virtualCode, modifiers_set)] = {
+                    "output": output,
+                    "base_key": baseKey.get(virtualCode),
+                    "key_code": (
+                        virtualCode if virtualCode == 10 or virtualCode == 50 else None
+                    ),
+                }
+
+        extract_keys()
+
+        for modifier, targets in modifiersMap.items():
+            if targets == set():
                 continue
+            extract_keys(modifier, frozenset(targets))
 
-            baseKey[int(isoCode)] = output
-            characters[output] = config.get_unicode_char_data(output)
-
-        # set standard
-        # add to csv
+        # Set country and language
         lang = pc.languages.lookup(config.LayoutLocale.get(name).get("language"))
         langAlpha = getattr(lang, "alpha_2", None) or lang.alpha_3
         locale = Locale(langAlpha)
@@ -185,8 +194,6 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
             variant += 1
         kloList.append(klo)
 
-        finalAppleID = matches[name][0]
-
         # platform,lang,country,layout,klo,klid,apple,cldr,status
         writer.writerow(
             [
@@ -202,11 +209,12 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
             ]
         )
 
+# it was because of "english" countries I named it eCountries. that's where it came from
 with open("../Logs/countries.csv", "w", newline="", encoding="utf-8") as eCountries:
     writer = csv.writer(eCountries)
     writer.writerow(["country", "native_name", "iso_3166"])
-    for native_name, value in countryNames.items():
-        writer.writerow([value["country"], native_name, value["iso"]])
+    for native_name, targets in countryNames.items():
+        writer.writerow([targets["country"], native_name, targets["iso"]])
 
 with open("../Logs/languages.csv", "w", newline="", encoding="utf-8") as eLanguages:
     writer = csv.writer(eLanguages)
@@ -217,8 +225,19 @@ with open("../Logs/languages.csv", "w", newline="", encoding="utf-8") as eLangua
 with open("../Logs/characters.csv", "w", newline="", encoding="utf-8") as eCharacters:
     writer = csv.writer(eCharacters)
     writer.writerow(["character", "code_point", "unicode_name"])
-    for char, values in characters.items():
-        writer.writerow([char, values["code_point"], values["unicode_name"]])
+    for char, value in characters.items():
+        writer.writerow([char, value["code_point"], value["unicode_name"]])
+
+with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
+    writer = csv.writer(eCombos)
+    writer.writerow(
+        ["output", "base_key", "keyboard_apple_id", "key_code", "modifiers"]
+    )
+    for key, value in keyCombos.items():
+        writer.writerow(
+            # change to bools for modifiers
+            [value["output"], value["base_key"], key[0], value["key_code"], set(key[2])]
+        )
 
 with open("../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:
