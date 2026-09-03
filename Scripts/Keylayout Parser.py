@@ -19,19 +19,18 @@ en = Locale("en")
 characters = {}
 keyCombos = {}
 
-with open("../logs/Layouts.csv", "w", newline="") as f:
-    writer = csv.writer(f)
+with open("../logs/layouts.csv", "w", newline="") as f:
+    writer = csv.writer(f, lineterminator="\n")
     writer.writerow(
         [
-            "platform_id",
-            "language_id",
-            "country_id",
-            "layout_id",
+            "platform",
+            "language",
+            "country",
+            "layout",
+            "status",
             "klo",
             "klid",
             "apple_id",
-            "cldr",
-            "status_id",
         ]
     )
 
@@ -105,6 +104,8 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
         def extract_keys(index=baseIndex, modifiers_set=frozenset()):
             for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{index}']"):
                 virtualCode = int(key.get("code"))
+                if virtualCode in config.NUMPAD_CODES:
+                    continue
                 output = key.get("output")
                 actionElement = None
                 if not output:
@@ -194,50 +195,70 @@ with open("../logs/Layouts.csv", "w", newline="") as f:
             variant += 1
         kloList.append(klo)
 
-        # platform,lang,country,layout,klo,klid,apple,cldr,status
+        # platform,lang,country,layout,klo,klid,apple,status
         writer.writerow(
             [
-                "1",
+                "macOS",
                 langAlpha,
                 nativeCountry if country is not None else "X",
                 layout,
+                "active",
                 klo,
                 None,
                 finalAppleID,
-                None,
-                "active",
             ]
         )
 
 # it was because of "english" countries I named it eCountries. that's where it came from
 with open("../Logs/countries.csv", "w", newline="", encoding="utf-8") as eCountries:
-    writer = csv.writer(eCountries)
+    writer = csv.writer(eCountries, lineterminator="\n")
     writer.writerow(["country", "native_name", "iso_3166"])
     for native_name, targets in countryNames.items():
         writer.writerow([targets["country"], native_name, targets["iso"]])
 
 with open("../Logs/languages.csv", "w", newline="", encoding="utf-8") as eLanguages:
-    writer = csv.writer(eLanguages)
+    writer = csv.writer(eLanguages, lineterminator="\n")
     writer.writerow(["name", "native_name", "iso_639"])
     for isoCode, names in languages.items():
         writer.writerow([names["name"], names["native_name"], isoCode])
 
 with open("../Logs/characters.csv", "w", newline="", encoding="utf-8") as eCharacters:
-    writer = csv.writer(eCharacters)
+    writer = csv.writer(eCharacters, lineterminator="\n")
     writer.writerow(["character", "code_point", "unicode_name"])
     for char, value in characters.items():
         writer.writerow([char, value["code_point"], value["unicode_name"]])
 
 with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
-    writer = csv.writer(eCombos)
+    writer = csv.writer(eCombos, lineterminator="\n")
     writer.writerow(
-        ["output", "base_key", "keyboard_apple_id", "key_code", "modifiers"]
+        [
+            "output",
+            "base_key",
+            "keyboard_apple_id",
+            "key_code",
+            "opt_alt",
+            "shift",
+            "ctrl",
+            "altGR",
+        ]
     )
+    setCount = 0
     for key, value in keyCombos.items():
-        writer.writerow(
-            # change to bools for modifiers
-            [value["output"], value["base_key"], key[0], value["key_code"], set(key[2])]
-        )
+        mods = key[2]
+        if value["base_key"] is not None:
+            writer.writerow(
+                # change to bools for modifiers
+                [
+                    value["output"],
+                    value["base_key"],
+                    key[0],
+                    value["key_code"],
+                    "option" in mods,
+                    "shift" in mods,
+                    False,
+                    False,
+                ]
+            )
 
 with open("../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:

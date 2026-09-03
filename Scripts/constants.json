@@ -1,0 +1,61 @@
+{
+  "platforms": [
+    "macOS",
+    "Windows",
+    "Linux"
+  ],
+  "letter_layouts": {
+    "other": [
+      "other"
+    ],
+    "qwerty": [
+      "qwerty"
+    ],
+    "azerty": [
+      "azerty"
+    ],
+    "qwertz": [
+      "qwertz"
+    ],
+    "fgğıod": [
+      "fgğıod"
+    ]
+  },
+  "layout_status": [
+    "active",
+    "legacy",
+    "deprecated"
+  ],
+  "key_dependencies": [
+    "iso",
+    "iso_relocate",
+    "jis"
+  ],
+  "standard_keys": [
+    {
+      "key_code": "10",
+      "dependency": "iso_relocate",
+      "platform": "macOS"
+    },
+    {
+      "key_code": "50",
+      "dependency": "iso",
+      "platform": "macOS"
+    },
+    {
+      "key_code": "93",
+      "dependency": "jis",
+      "platform": "macOS"
+    },
+    {
+      "key_code": "94",
+      "dependency": "jis",
+      "platform": "macOS"
+    },
+    {
+      "key_code": "95",
+      "dependency": "jis",
+      "platform": "macOS"
+    }
+  ]
+}
