@@ -11,19 +11,23 @@ CREATE SCHEMA public;
 \i '~/Downloads/Projects/Keyboard Layouts/schema/seed.sql'
 
 -- QUERY for answering "how to type •" on a specific keyboard
--- c.character = "•" is the user input and the keyboard kl.klo = "m-da-DK-i" is the one they select
 
-SELECT kc.base_key, kc.modify_opt_alt, kc.modify_shift, kc.modify_ctrl, kc.modify_altgr
-FROM key_combos kc
-JOIN characters c ON kc.output_char_id = c.id
-JOIN keyboard_layouts kl ON KC.keyboard_id = kl.id
-WHERE c.character = '•' AND kl.klo = 'm-da-DK';
+SELECT layout.id, base.character, combo.modify_opt_alt, combo.modify_shift, combo.modify_ctrl, combo.modify_altgr
+FROM key_combos AS combo
+JOIN characters AS out ON out.id = combo.output_char_id
+JOIN keyboard_layouts AS layout ON layout.id = combo.keyboard_id
+JOIN characters AS base ON base.id = combo.base_key_id
+JOIN countries as c ON c.id = layout.country_id
+WHERE out.character = 'Ğ'
+AND c.native_name = 'Türkiye';
 
-
--- Query for answering "whats the name for :" in french
--- the c.character == : is the user inputed character and the l.iso_639 == fr is the user selected language
-SELECT cn.name
-FROM character_names cn
-JOIN characters c ON cn.char_id = c.id
-JOIN languages l ON cn.language_id = l.id
-WHERE c.character = ':' AND l.iso_639 = 'fr';
+-- Query what does "combo" produce on "specific layout"
+SELECT out.character
+FROM key_combos AS combo
+JOIN characters AS out ON out.id = combo.output_char_id
+JOIN characters AS base ON base.id = combo.base_key_id
+JOIN keyboard_layouts AS layout ON layout.id = combo.keyboard_id
+WHERE layout.klo = 'm-da-DK'
+AND combo.modify_shift = True
+AND combo.modify_opt_alt = True
+AND base.character = 'q';

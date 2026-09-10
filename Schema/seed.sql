@@ -22,11 +22,20 @@ INSERT INTO countries(country, native_name, iso_3166)
 VALUES('X','X','X');
 
 
+CREATE TEMP TABLE IF NOT EXISTS key_code_staging(
+platform TEXT NOT NULL,
+key_code INTEGER NOT NULL,
+enum TEXT
+) ON COMMIT DROP;
+
+COPY key_code_staging(platform, key_code, enum) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/standard_keys.csv' WITH (FORMAT csv, HEADER true);
+
+
 INSERT INTO standard_keys (platform_id, key_code, enum_id)
-SELECT p.id, skey.key_code, keydep.id
-FROM jsonb_to_recordset(:'content'::jsonb -> 'standard_keys') AS skey(key_code INTEGER, dependency TEXT, platform TEXT)
-JOIN platforms AS p ON p.name = skey.platform
-JOIN key_dependencies AS keydep ON keydep.enum = skey.dependency;
+SELECT p.id, kstage.key_code, keydep.id
+FROM key_code_staging AS kstage
+JOIN platforms AS p ON p.name = kstage.platform
+LEFT JOIN key_dependencies AS keydep ON keydep.enum = kstage.enum;
 
 
 COPY countries(country, native_name, iso_3166) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/countries.csv' WITH (FORMAT csv, HEADER true);
@@ -42,6 +51,8 @@ language TEXT NOT NULL,
 country TEXT NOT NULL,
 layout TEXT NOT NULL,
 status TEXT NOT NULL,
+english_name TEXT NOT NULL,
+native_name TEXT,
 klo TEXT NOT NULL UNIQUE,
 klid TEXT UNIQUE,
 apple_id TEXT UNIQUE
@@ -61,8 +72,8 @@ JOIN layout_status AS st ON st.status = staging.status;
 CREATE TEMP TABLE IF NOT EXISTS combos_staging(
 output_char TEXT NOT NULL,
 base_key TEXT NOT NULL,  
-apple_id TEXT NOT NULL,
 key_code TEXT,
+apple_id TEXT NOT NULL,
 opt_alt BOOL NOT NULL,
 shift BOOL NOT NULL,
 ctrl BOOL NOT NULL,
@@ -71,23 +82,13 @@ altgr BOOL NOT NULL
 
 COPY combos_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/combos.csv' WITH (FORMAT csv, HEADER true);
 
-INSERT INTO key_combos (output_char_id, base_key_id, keyboard_id, key_code_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
-SELECT char.id, base.id, keyboard.id, skey.id, cs.opt_alt, cs.shift, cs.ctrl, cs.altgr
+INSERT INTO key_combos (output_char_id, base_key_id, key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
+SELECT char.id, base.id, skey.id, keyboard.id, cs.opt_alt, cs.shift, cs.ctrl, cs.altgr
 FROM combos_staging AS cs
 JOIN characters AS char ON char.character = cs.output_char
 JOIN characters AS base ON base.character = cs.base_key
+LEFT JOIN standard_keys AS skey ON skey.key_code = CAST(cs.key_code AS INTEGER)
 JOIN keyboard_layouts AS keyboard ON keyboard.apple_id = cs.apple_id
-LEFT JOIN standard_keys AS skey ON skey.key_code = CAST (cs.key_code AS INTEGER)
-AND skey.platform_id = keyboard.platform_id
-ON CONFLICT DO NOTHING;
-
-
-
-
-
--- INSERT INTO character_names(name, char_id, language_id) VALUES ('colon', 1, 1), ('deux-points', 1, 3), ('semikolon', 3, 2);
-
--- INSERT INTO key_combos(output_char_id, base_key, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
--- VALUES (1, '.', 1, FALSE, TRUE, FALSE, FALSE), (2, 'q', 1, TRUE, TRUE, FALSE, FALSE), (3, ',', 1, FALSE, TRUE, FALSE, FALSE);
+AND skey.platform_id = keyboard.platform_id;
 
 COMMIT;

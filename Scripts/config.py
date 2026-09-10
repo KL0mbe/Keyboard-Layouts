@@ -20,6 +20,16 @@ CANON = {
 
 TARGETS = (frozenset(), {"shift"}, {"option"}, {"shift", "option"})
 
+LAYOUT_DEPENDENCY = {
+    10: "iso",
+    50: "iso_relocate",
+    93: "jis",
+    94: "jis",
+    95: "jis",
+    102: "jis",
+    104: "jis",
+}
+
 NUMPAD_CODES = [65, 67, 69, 71, 75, 76, 78, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92]
 
 LetterRow = [12, 13, 14, 15, 17, 16]

@@ -2,12 +2,14 @@ from cleanAppleKeyLayoutNames import *
 from babel import Locale, localedata
 import xml.etree.ElementTree as ET
 import pycountry as pc
+import json
 import csv
 
 path = Path("../Cleaned Apple Keyboard layouts/Test xml override")
 
 appleIDsDict = build_apple_id_dict()
 appleIDSuffix = build_apple_id_suffix()
+appleNameDict = build_apple_display_name()
 matches = {}
 unMatches = []
 kloList = []
@@ -18,6 +20,15 @@ en = Locale("en")
 
 characters = {}
 keyCombos = {}
+compositions = {}
+
+with open("../TISNames/loctable.json", newline="", encoding="utf-8") as f:
+    loctable = json.load(f)
+
+
+loctable_keys = {
+    key.lower().replace(" ", "").replace("-", ""): key for key in loctable["en"].keys()
+}
 
 with open("../logs/layouts.csv", "w", newline="") as f:
     writer = csv.writer(f, lineterminator="\n")
@@ -28,6 +39,8 @@ with open("../logs/layouts.csv", "w", newline="") as f:
             "country",
             "layout",
             "status",
+            "english_name",
+            "native_name",
             "klo",
             "klid",
             "apple_id",
@@ -103,28 +116,46 @@ with open("../logs/layouts.csv", "w", newline="") as f:
         # get the base keys
         def extract_keys(index=baseIndex, modifiers_set=frozenset()):
             for key in root.find(f"keyMapSet[@id='{mapSet}']/keyMap[@index='{index}']"):
+                output = key.get("output")
                 virtualCode = int(key.get("code"))
                 if virtualCode in config.NUMPAD_CODES:
                     continue
-                output = key.get("output")
                 actionElement = None
                 if not output:
                     action = key.get("action")
                     if not action:
                         continue
 
-                    for act in root.findall("actions/action"):
-                        if action == act.get("id"):
-                            actionElement = act.find("when[@state='none']")
+                    for subAct in root.findall("actions/action"):
+                        if action == subAct.get("id"):
+                            actionElement = subAct.find("when[@state='none']")
+                            # compositions = subAct.findall("when")
+                            # if name == "danish":
+                            #     for composition in compositions:
+                            #         if composition.get("state") != "none":
+                            #             print(
+                            #                 virtualCode,
+                            #                 action,
+                            #                 composition.get("output"),
+                            #                 appleID,
+                            #             )
+                            #         compositions[
+                            #             (composition.get("output"), appleID)
+                            #         ] = {"step1_char": "", "step2": ""}
 
-                    if actionElement is None:
-                        continue
+                    # if actionElement is None:
+                    #     print(f"No ActionElement for {name, virtualCode}")
 
-                    actionKey = actionElement.get("output")
-                    if not actionKey:
-                        continue
-
-                    output = actionKey
+                    actionOutput = actionElement.get("output")
+                    # Dead Keys
+                    if not actionOutput:
+                        actionState = actionElement.get("next")
+                        terminator = root.find(
+                            f"terminators/when[@state='{actionState}']"
+                        )
+                        output = terminator.get("output")
+                    else:
+                        output = actionOutput
 
                 if index == baseIndex:
                     baseKey[virtualCode] = output
@@ -132,9 +163,7 @@ with open("../logs/layouts.csv", "w", newline="") as f:
                 keyCombos[(finalAppleID, virtualCode, modifiers_set)] = {
                     "output": output,
                     "base_key": baseKey.get(virtualCode),
-                    "key_code": (
-                        virtualCode if virtualCode == 10 or virtualCode == 50 else None
-                    ),
+                    "key_code": virtualCode,
                 }
 
         extract_keys()
@@ -186,16 +215,23 @@ with open("../logs/layouts.csv", "w", newline="") as f:
         else:
             layout = "other"
 
+        nativeNames = loctable.get(langAlpha) or loctable.get("en")
+
+        stem = finalAppleID.split(".")[-1]
+        norm = stem.lower().replace(" ", "").replace("-", "")
+        key = loctable_keys.get(norm)
+        nativeDisplay = nativeNames.get(key)
+
         baseKLO = f"m-{langAlpha}-{countryAlpha}"
         klo = baseKLO
-        # V2: More stable way of iding klo
+        # V2: More stable way of iding klo (so its consistent across different runs)
         variant = 1
         while klo in kloList:
             klo = baseKLO + f"-{variant}"
             variant += 1
         kloList.append(klo)
 
-        # platform,lang,country,layout,klo,klid,apple,status
+        # platform,lang,country,layout,status,english_name,display_name,klo,klid,apple
         writer.writerow(
             [
                 "macOS",
@@ -203,6 +239,8 @@ with open("../logs/layouts.csv", "w", newline="") as f:
                 nativeCountry if country is not None else "X",
                 layout,
                 "active",
+                appleNameDict[finalAppleID],
+                nativeDisplay,
                 klo,
                 None,
                 finalAppleID,
@@ -234,31 +272,37 @@ with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
         [
             "output",
             "base_key",
-            "keyboard_apple_id",
             "key_code",
+            "keyboard_apple_id",
             "opt_alt",
             "shift",
             "ctrl",
             "altGR",
         ]
     )
-    setCount = 0
     for key, value in keyCombos.items():
         mods = key[2]
         if value["base_key"] is not None:
             writer.writerow(
-                # change to bools for modifiers
                 [
                     value["output"],
                     value["base_key"],
-                    key[0],
                     value["key_code"],
+                    key[0],
                     "option" in mods,
                     "shift" in mods,
                     False,
                     False,
                 ]
             )
+
+with open("../Logs/standard_keys.csv", "w", newline="", encoding="utf-8") as eSKeys:
+    writer = csv.writer(eSKeys, lineterminator="\n")
+    writer.writerow(["platform", "key_code", "enum"])
+    keyCodes = {combo[1] for combo in keyCombos}
+    for code in keyCodes:
+        writer.writerow(["macOS", code, config.LAYOUT_DEPENDENCY.get(code)])
+
 
 with open("../Logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:

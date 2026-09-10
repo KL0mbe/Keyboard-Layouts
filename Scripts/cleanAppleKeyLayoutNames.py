@@ -25,3 +25,14 @@ def build_apple_id_suffix():
             suffix = config.clean_str(appleId.split(".")[-1])
             appleIds[suffix] = appleId
     return appleIds
+
+
+def build_apple_display_name():
+    appleIds = {}
+    with open(file, "r") as f:
+        for line in f:
+            parts = line.split("\t")
+            appleId = parts[0]
+            suffix = parts[1]
+            appleIds[appleId] = suffix.strip()
+        return appleIds
