@@ -20,7 +20,8 @@ en = Locale("en")
 
 characters = {}
 keyCombos = {}
-compositions = {}
+compositions = []
+actionIdToCombo = {}
 
 with open("../TISNames/loctable.json", newline="", encoding="utf-8") as f:
     loctable = json.load(f)
@@ -125,23 +126,13 @@ with open("../logs/layouts.csv", "w", newline="") as f:
                     action = key.get("action")
                     if not action:
                         continue
+                    actionIdToCombo.setdefault(action, []).append(
+                        [virtualCode, modifiers_set]
+                    )
 
                     for subAct in root.findall("actions/action"):
                         if action == subAct.get("id"):
                             actionElement = subAct.find("when[@state='none']")
-                            # compositions = subAct.findall("when")
-                            # if name == "danish":
-                            #     for composition in compositions:
-                            #         if composition.get("state") != "none":
-                            #             print(
-                            #                 virtualCode,
-                            #                 action,
-                            #                 composition.get("output"),
-                            #                 appleID,
-                            #             )
-                            #         compositions[
-                            #             (composition.get("output"), appleID)
-                            #         ] = {"step1_char": "", "step2": ""}
 
                     # if actionElement is None:
                     #     print(f"No ActionElement for {name, virtualCode}")
@@ -173,6 +164,40 @@ with open("../logs/layouts.csv", "w", newline="") as f:
                 continue
             extract_keys(modifier, frozenset(targets))
 
+        def recursive_steps(state):
+            for a in root.findall("actions/action"):
+                for w in a:
+                    if w.get("next") == state:
+                        entry = actionIdToCombo.get(a.get("id"))
+                        if not entry:
+                            return None
+                        combos = entry[0]
+                        if w.get("state") == "none":
+                            return [combos]
+                        else:
+                            return recursive_steps(w.get("state")) + [combos]
+            return []
+
+        for action in root.findall("actions/action"):
+            for when in action.findall("when"):
+                if when.get("state") != "none" and when.get("output"):
+                    output = when.get("output")
+                    characters[output] = config.get_unicode_char_data(output)
+                    resolver_entry = actionIdToCombo.get(action.get("id"))
+                    if not resolver_entry:
+                        continue
+                    resolver = resolver_entry[0]
+                    primers = recursive_steps(when.get("state"))
+                    if not primers:
+                        continue
+
+                    compositions.append(
+                        [
+                            when.get("output"),
+                            finalAppleID,
+                            primers + [resolver],
+                        ]
+                    )
         # Set country and language
         lang = pc.languages.lookup(config.LayoutLocale.get(name).get("language"))
         langAlpha = getattr(lang, "alpha_2", None) or lang.alpha_3
@@ -295,6 +320,15 @@ with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
                     False,
                 ]
             )
+
+with open(
+    "../Logs/compositions.csv", "w", newline="", encoding="utf-8"
+) as eCompositions:
+    writer = csv.writer(eCompositions, lineterminator="\n")
+    writer.writerow(["output_char", "apple_id", "steps"])
+    for composition in compositions:
+        steps = [[keyCode, list(mods)] for keyCode, mods in composition[2]]
+        writer.writerow([composition[0], composition[1], json.dumps(steps)])
 
 with open("../Logs/standard_keys.csv", "w", newline="", encoding="utf-8") as eSKeys:
     writer = csv.writer(eSKeys, lineterminator="\n")

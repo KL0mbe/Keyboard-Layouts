@@ -89,6 +89,44 @@ JOIN characters AS char ON char.character = cs.output_char
 JOIN characters AS base ON base.character = cs.base_key
 LEFT JOIN standard_keys AS skey ON skey.key_code = CAST(cs.key_code AS INTEGER)
 JOIN keyboard_layouts AS keyboard ON keyboard.apple_id = cs.apple_id
-AND skey.platform_id = keyboard.platform_id;
+    AND skey.platform_id = keyboard.platform_id;
 
+
+CREATE TEMP TABLE IF NOT EXISTS composition_staging(
+output_char TEXT NOT NULL,
+apple_id TEXT NOT NULL,
+steps JSONB NOT NULL
+)ON COMMIT DROP;
+
+COPY composition_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/compositions.csv' WITH (FORMAT csv, HEADER true);
+
+WITH rows AS (
+SELECT *, row_number() OVER (ORDER BY ctid) AS rn
+FROM composition_staging
+), ins AS (
+INSERT INTO compositions (output_char_id, keyboard_id)
+SELECT out.id, layout.id
+FROM rows
+JOIN characters AS out ON out.character = rows.output_char
+JOIN keyboard_layouts AS layout ON layout.apple_id = rows.apple_id
+ORDER BY rows.rn
+RETURNING id
+), paired AS (
+SELECT id AS composition_id, row_number() OVER (ORDER BY id) AS rn
+FROM ins
+)
+INSERT INTO composition_steps(step, composition_id, combo_id)
+SELECT s.step_order, p.composition_id, combo.id
+FROM rows
+JOIN paired AS p ON p.rn = rows.rn
+JOIN keyboard_layouts AS layout ON layout.apple_id = rows.apple_id
+CROSS JOIN LATERAL jsonb_array_elements(rows.steps) WITH ORDINALITY AS s(step_data, step_order)
+JOIN key_combos AS combo ON combo.keyboard_id = layout.id
+    AND combo.modify_opt_alt = (s.step_data -> 1) ? 'option'  
+    AND combo.modify_shift = (s.step_data -> 1) ? 'shift'
+    AND combo.modify_ctrl = (s.step_data -> 1) ? 'ctrl'
+    AND combo.modify_altgr = (s.step_data -> 1) ? 'altgr'
+JOIN standard_keys AS skeys ON skeys.id = combo.key_code_id
+    AND skeys.key_code = (s.step_data ->> 0)::int;
+    
 COMMIT;

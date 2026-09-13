@@ -11,7 +11,6 @@ CREATE SCHEMA public;
 \i '~/Downloads/Projects/Keyboard Layouts/schema/seed.sql'
 
 -- QUERY for answering "how to type •" on a specific keyboard
-
 SELECT layout.id, base.character, combo.modify_opt_alt, combo.modify_shift, combo.modify_ctrl, combo.modify_altgr
 FROM key_combos AS combo
 JOIN characters AS out ON out.id = combo.output_char_id
@@ -31,3 +30,12 @@ WHERE layout.klo = 'm-da-DK'
 AND combo.modify_shift = True
 AND combo.modify_opt_alt = True
 AND base.character = 'q';
+
+SELECT out.character, skey.key_code, base.character, combo.modify_shift, combo.modify_opt_alt
+FROM key_combos AS combo
+JOIN composition_steps AS steps ON steps.combo_id = combo.id
+JOIN standard_keys AS skey ON skey.id = combo.key_code_id
+JOIN compositions AS comp ON comp.id = steps.composition_id
+JOIN characters AS out ON out.id = comp.output_char_id
+JOIN characters AS base ON base.id = combo.base_key_id
+WHERE out.character = 'Ä';

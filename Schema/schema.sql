@@ -77,4 +77,17 @@ modified_at TIMESTAMPTZ NOT NULL DEFAULT now(),
 UNIQUE(key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
 );
 
+CREATE TABLE compositions(
+id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+output_char_id INTEGER NOT NULL REFERENCES characters(id),
+keyboard_id INTEGER NOT NULL REFERENCES keyboard_layouts(id)
+);
+
+CREATE TABLE composition_steps(
+id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+step INTEGER NOT NULL,
+composition_id INTEGER NOT NULL REFERENCES compositions(id),
+combo_id INTEGER NOT NULL REFERENCES key_combos(id)
+);
+
 CREATE INDEX ON key_combos(keyboard_id, output_char_id);
