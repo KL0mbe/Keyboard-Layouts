@@ -52,7 +52,7 @@ country TEXT NOT NULL,
 layout TEXT NOT NULL,
 status TEXT NOT NULL,
 english_name TEXT NOT NULL,
-native_name TEXT,
+native_name TEXT NOT NULL,
 klo TEXT NOT NULL UNIQUE,
 klid TEXT UNIQUE,
 apple_id TEXT UNIQUE
@@ -60,8 +60,8 @@ apple_id TEXT UNIQUE
 
 COPY keyboard_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/layouts.csv' WITH (FORMAT csv, HEADER true);
 
-INSERT INTO keyboard_layouts (platform_id, language_id, country_id, layout_id, status_id, klo, klid, apple_id)
-SELECT p.id, lang.id, c.id, lay.id, st.id, staging.klo, staging.klid, staging.apple_id
+INSERT INTO keyboard_layouts (platform_id, language_id, country_id, layout_id, status_id, english_name, native_name, klo, klid, apple_id)
+SELECT p.id, lang.id, c.id, lay.id, st.id, staging.english_name, staging.native_name, staging.klo, staging.klid, staging.apple_id
 FROM keyboard_staging AS staging
 JOIN platforms AS p ON p.name = staging.platform
 JOIN languages AS lang ON lang.iso_639 = staging.language
