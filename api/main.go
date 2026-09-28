@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -16,7 +17,11 @@ type ComboResponse struct {
 }
 
 func main() {
-	pool, err := pgxpool.New(context.Background(), "postgres://klombe@localhost:5432/keyboards")
+	dbURL := os.Getenv("DATABASE_URL")
+	if dbURL == "" {
+		log.Fatal("DATABASE_URL not set")
+	}
+	pool, err := pgxpool.New(context.Background(), dbURL)
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
 	}
@@ -25,7 +30,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /", getChar(pool))
 	mux.HandleFunc("GET /countries/", getCountries(pool))
-	log.Fatal(http.ListenAndServe("127.0.0.1:8080", withCORS(mux)))
+	log.Fatal(http.ListenAndServe(":8080", withCORS(mux)))
 }
 
 func getCountries(pool *pgxpool.Pool) http.HandlerFunc {

@@ -4,7 +4,7 @@ BEGIN;
 TRUNCATE countries, languages, characters, letter_layouts, key_dependencies, layout_status, platforms, standard_keys, keyboard_layouts, key_combos RESTART IDENTITY CASCADE;
 
 
-\set content `cat "/Users/klombe/Downloads/Projects/Keyboard Layouts/Scripts/constants.json"`
+\set content `cat "/seed/constants.json"`
 
 INSERT INTO platforms (name)
 SELECT * FROM jsonb_array_elements_text(:'content'::jsonb -> 'platforms');
@@ -28,7 +28,7 @@ key_code INTEGER NOT NULL,
 enum TEXT
 ) ON COMMIT DROP;
 
-COPY key_code_staging(platform, key_code, enum) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/standard_keys.csv' WITH (FORMAT csv, HEADER true);
+COPY key_code_staging(platform, key_code, enum) FROM '/seed/logs/standard_keys.csv' WITH (FORMAT csv, HEADER true);
 
 
 INSERT INTO standard_keys (platform_id, key_code, enum_id)
@@ -38,11 +38,11 @@ JOIN platforms AS p ON p.name = kstage.platform
 LEFT JOIN key_dependencies AS keydep ON keydep.enum = kstage.enum;
 
 
-COPY countries(country, native_name, iso_3166) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/countries.csv' WITH (FORMAT csv, HEADER true);
+COPY countries(country, native_name, iso_3166) FROM '/seed/logs/countries.csv' WITH (FORMAT csv, HEADER true);
 
-COPY languages (name, native_name, iso_639) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/languages.csv' WITH (FORMAT csv, HEADER true);
+COPY languages (name, native_name, iso_639) FROM '/seed/logs/languages.csv' WITH (FORMAT csv, HEADER true);
 
-COPY characters (character, unicode_code, unicode_name) FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/characters.csv' WITH (FORMAT csv, HEADER true);
+COPY characters (character, unicode_code, unicode_name) FROM '/seed/logs/characters.csv' WITH (FORMAT csv, HEADER true);
 
 
 CREATE TEMP TABLE IF NOT EXISTS keyboard_staging(
@@ -58,7 +58,7 @@ klid TEXT UNIQUE,
 apple_id TEXT UNIQUE
 ) ON COMMIT DROP;
 
-COPY keyboard_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/layouts.csv' WITH (FORMAT csv, HEADER true);
+COPY keyboard_staging FROM '/seed/logs/layouts.csv' WITH (FORMAT csv, HEADER true);
 
 INSERT INTO keyboard_layouts (platform_id, language_id, country_id, layout_id, status_id, english_name, native_name, klo, klid, apple_id)
 SELECT p.id, lang.id, c.id, lay.id, st.id, staging.english_name, staging.native_name, staging.klo, staging.klid, staging.apple_id
@@ -80,7 +80,7 @@ ctrl BOOL NOT NULL,
 altgr BOOL NOT NULL
 ) ON COMMIT DROP;
 
-COPY combos_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/combos.csv' WITH (FORMAT csv, HEADER true);
+COPY combos_staging FROM '/seed/logs/combos.csv' WITH (FORMAT csv, HEADER true);
 
 INSERT INTO key_combos (output_char_id, base_key_id, key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
 SELECT char.id, base.id, skey.id, keyboard.id, cs.opt_alt, cs.shift, cs.ctrl, cs.altgr
@@ -98,7 +98,7 @@ apple_id TEXT NOT NULL,
 steps JSONB NOT NULL
 )ON COMMIT DROP;
 
-COPY composition_staging FROM '/Users/klombe/Downloads/Projects/Keyboard Layouts/logs/compositions.csv' WITH (FORMAT csv, HEADER true);
+COPY composition_staging FROM '/seed/logs/compositions.csv' WITH (FORMAT csv, HEADER true);
 
 WITH rows AS (
 SELECT *, row_number() OVER (ORDER BY ctid) AS rn

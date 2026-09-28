@@ -31,7 +31,7 @@ loctable_keys = {
     key.lower().replace(" ", "").replace("-", ""): key for key in loctable["en"].keys()
 }
 
-with open("../logs/layouts.csv", "w", newline="") as f:
+with open("../../logs/layouts.csv", "w", newline="") as f:
     writer = csv.writer(f, lineterminator="\n")
     writer.writerow(
         [
@@ -273,25 +273,25 @@ with open("../logs/layouts.csv", "w", newline="") as f:
         )
 
 # it was because of "english" countries I named it eCountries. that's where it came from
-with open("../Logs/countries.csv", "w", newline="", encoding="utf-8") as eCountries:
+with open("../../logs/countries.csv", "w", newline="", encoding="utf-8") as eCountries:
     writer = csv.writer(eCountries, lineterminator="\n")
     writer.writerow(["country", "native_name", "iso_3166"])
     for native_name, targets in countryNames.items():
         writer.writerow([targets["country"], native_name, targets["iso"]])
 
-with open("../Logs/languages.csv", "w", newline="", encoding="utf-8") as eLanguages:
+with open("../../logs/languages.csv", "w", newline="", encoding="utf-8") as eLanguages:
     writer = csv.writer(eLanguages, lineterminator="\n")
     writer.writerow(["name", "native_name", "iso_639"])
     for isoCode, names in languages.items():
         writer.writerow([names["name"], names["native_name"], isoCode])
 
-with open("../Logs/characters.csv", "w", newline="", encoding="utf-8") as eCharacters:
+with open("../../logs/characters.csv", "w", newline="", encoding="utf-8") as eCharacters:
     writer = csv.writer(eCharacters, lineterminator="\n")
     writer.writerow(["character", "code_point", "unicode_name"])
     for char, value in characters.items():
         writer.writerow([char, value["code_point"], value["unicode_name"]])
 
-with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
+with open("../../logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
     writer = csv.writer(eCombos, lineterminator="\n")
     writer.writerow(
         [
@@ -322,7 +322,7 @@ with open("../Logs/combos.csv", "w", newline="", encoding="utf-8") as eCombos:
             )
 
 with open(
-    "../Logs/compositions.csv", "w", newline="", encoding="utf-8"
+    "../../logs/compositions.csv", "w", newline="", encoding="utf-8"
 ) as eCompositions:
     writer = csv.writer(eCompositions, lineterminator="\n")
     writer.writerow(["output_char", "apple_id", "steps"])
@@ -330,7 +330,7 @@ with open(
         steps = [[keyCode, list(mods)] for keyCode, mods in composition[2]]
         writer.writerow([composition[0], composition[1], json.dumps(steps)])
 
-with open("../Logs/standard_keys.csv", "w", newline="", encoding="utf-8") as eSKeys:
+with open("../../logs/standard_keys.csv", "w", newline="", encoding="utf-8") as eSKeys:
     writer = csv.writer(eSKeys, lineterminator="\n")
     writer.writerow(["platform", "key_code", "enum"])
     keyCodes = {combo[1] for combo in keyCombos}
@@ -338,6 +338,6 @@ with open("../Logs/standard_keys.csv", "w", newline="", encoding="utf-8") as eSK
         writer.writerow(["macOS", code, config.LAYOUT_DEPENDENCY.get(code)])
 
 
-with open("../Logs/noMatchNames.txt", "w") as noMatch:
+with open("../../logs/noMatchNames.txt", "w") as noMatch:
     for name in unMatches:
         noMatch.write(f"keyLayout {name} had no match in the list of appleIDs\n")

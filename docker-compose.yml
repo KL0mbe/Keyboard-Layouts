@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:16
+    ports:
+      - "127.0.0.1:5433:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: keyboards
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/Schema/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/Schema/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+      - ./logs:/seed/logs:ro
+      - ./parser/Scripts/constants.json:/seed/constants.json:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -h 127.0.0.1 -U ${POSTGRES_USER} -d keyboards",
+        ]
+      interval: 5s
+      retries: 30
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/keyboards
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
