@@ -29,7 +29,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /", getChar(pool))
-	mux.HandleFunc("GET /countries/", getCountries(pool))
+	mux.HandleFunc("GET /countries", getCountries(pool))
 	log.Fatal(http.ListenAndServe(":8080", withCORS(mux)))
 }
 

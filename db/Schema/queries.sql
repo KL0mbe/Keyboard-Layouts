@@ -1,14 +1,14 @@
 
 -- QUERY for resetting the db data
-TRUNCATE countries, languages, characters, letter_layouts, key_dependencies, layout_status, platforms, standard_keys, keyboard_layouts, key_combos RESTART IDENTITY CASCADE;
+TRUNCATE countries, languages, characters, letter_layouts, key_dependencies, layout_status, platforms, standard_keys, keyboard_layouts, key_combos, compositions, composition_steps RESTART IDENTITY CASCADE;
 
 -- QUERY for resetting the db schema 
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
 -- Query for seeding schema and data
-\i '~/Downloads/Projects/Keyboard Layouts/schema/schema.sql'
-\i '~/Downloads/Projects/Keyboard Layouts/schema/seed.sql'
+\i '/db/Schema/schema.sql'
+\i '/db/Schema/seed.sql'
 
 -- QUERY for answering "how to type •" on a specific keyboard
 SELECT layout.id, base.character, combo.modify_opt_alt, combo.modify_shift, combo.modify_ctrl, combo.modify_altgr

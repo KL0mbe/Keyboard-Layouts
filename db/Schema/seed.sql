@@ -1,7 +1,7 @@
 
 BEGIN;
 
-TRUNCATE countries, languages, characters, letter_layouts, key_dependencies, layout_status, platforms, standard_keys, keyboard_layouts, key_combos RESTART IDENTITY CASCADE;
+TRUNCATE countries, languages, characters, letter_layouts, key_dependencies, layout_status, platforms, standard_keys, keyboard_layouts, key_combos, compositions, composition_steps RESTART IDENTITY CASCADE;
 
 
 \set content `cat "/seed/constants.json"`
