@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: /home/klombe/Projects/Keyboard-Layouts
+    steps:
+      - name: Pull latest code
+        run: git pull --ff-only
+
+      - name: Rebuild and restart containers
+        run: docker compose up -d --build
+
+      - name: Check the API responds
+        run: |
+          for i in $(seq 1 10); do
+            curl -fsS http://localhost:8080/countries > /dev/null && exit 0
+            sleep 3
+          done
+          echo "API did not respond after deploy"
+          exit 1
+
+      - name: Remove old images
+        run: docker image prune -f
