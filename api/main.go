@@ -54,7 +54,14 @@ func getChar(pool *pgxpool.Pool) http.HandlerFunc {
 		char := r.URL.Query().Get("char")
 		country := r.URL.Query().Get("country")
 		if char == "" || country == "" {
-			http.Error(w, "Missing parameters", http.StatusBadRequest)
+            errorMessage := "Missing Parameters:"
+            if char == "" {
+                errorMessage += " char" 
+            }
+            if country == "" {
+                errorMessage += " country" 
+            }
+			http.Error(w, errorMessage, http.StatusBadRequest)
 			return
 		}
 		singleRows, err := pool.Query(context.Background(), `
