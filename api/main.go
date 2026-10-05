@@ -37,7 +37,7 @@ func getCountries(pool *pgxpool.Pool) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		rows, err := pool.Query(context.Background(), "SELECT * FROM countries")
 		if err != nil {
-			http.Error(w, "Countries Query failed", http.StatusInternalServerError)
+			http.Error(w, "Countries Query failed: "+err.Error(), http.StatusInternalServerError)
 			return
 		}
 		results, err := pgx.CollectRows(rows, pgx.RowToMap)
@@ -54,13 +54,13 @@ func getChar(pool *pgxpool.Pool) http.HandlerFunc {
 		char := r.URL.Query().Get("char")
 		country := r.URL.Query().Get("country")
 		if char == "" || country == "" {
-            errorMessage := "Missing Parameters:"
-            if char == "" {
-                errorMessage += " char" 
-            }
-            if country == "" {
-                errorMessage += " country" 
-            }
+			errorMessage := "Missing Parameters:"
+			if char == "" {
+				errorMessage += " char"
+			}
+			if country == "" {
+				errorMessage += " country"
+			}
 			http.Error(w, errorMessage, http.StatusBadRequest)
 			return
 		}

@@ -66,7 +66,7 @@ POSTGRES_PASSWORD=password
 ### Run
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 On first start, Postgres runs the schema and seeds automatically from `db/` and `logs/` populating the database into a `pgdata` volume. The API is then available on port 8080.
@@ -74,7 +74,7 @@ On first start, Postgres runs the schema and seeds automatically from `db/` and 
 To wipe and reseed from scratch including the data volume:
 
 ```bash
-docker compose down -v && docker compose up -d
+docker compose down -v && docker compose up -d --build
 ```
 
 ### API usage
@@ -183,7 +183,8 @@ The CSVs in `logs/` are committed and up to date. No need to run the parser to p
 
 ```bash
 pip install babel pycountry
-python "parser/Scripts/Keylayout Parser.py"
+cd parser/scripts
+python3 -m macParser.keylayoutParser
 ```
 
 ## Status & scope
@@ -193,6 +194,7 @@ python "parser/Scripts/Keylayout Parser.py"
 Deliberately deferred to v3:
 
 - Windows (MSKLC / KLC) layout track
+- Linux layout track
 - OS-native key extraction via `UCKeyTranslate`
 
 Scope was drawn to ship something working over something complete.

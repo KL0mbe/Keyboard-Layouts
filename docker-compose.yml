@@ -9,10 +9,10 @@ services:
       POSTGRES_DB: keyboards
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./db/Schema/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
-      - ./db/Schema/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+      - ./db/schema/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/schema/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
       - ./logs:/seed/logs:ro
-      - ./parser/Scripts/constants.json:/seed/constants.json:ro
+      - ./parser/scripts/constants.json:/seed/constants.json:ro
     healthcheck:
       test:
         [
