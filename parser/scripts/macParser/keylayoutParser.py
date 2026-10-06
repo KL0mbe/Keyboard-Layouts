@@ -1,11 +1,11 @@
 import cleaners.cleanAppleKeyLayoutNames as clean
-from layoutLocale import extract_country_language
-from identity import associate_apple_ids
-from modifiers import extract_modifiers
-from deadKeys import extract_dead_keys
-from keyParser import extract_keys
+from .layoutLocale import extract_country_language
+from .identity import associate_apple_ids
+from .modifiers import extract_modifiers
+from .deadKeys import extract_dead_keys
+from .keyParser import extract_keys
 import xml.etree.ElementTree as ET
-from writers import write_files
+from .writers import write_files
 import config
 import json
 import csv
@@ -20,7 +20,6 @@ compositions = []
 matches = {}
 unMatches = []
 
-actionIDToCombo = {}
 kloList = []
 
 with open(config.parserDir / "TISNames/loctable.json", newline="", encoding="utf-8") as f:
@@ -30,7 +29,7 @@ loctable_keys = {
     key.lower().replace(" ", "").replace("-", ""): key for key in loctable["en"].keys()
 }
 
-with open(config.logsDir / "layouts.csv", "w", newline="") as f:
+with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f, lineterminator="\n")
     writer.writerow(
         [
@@ -60,6 +59,7 @@ with open(config.logsDir / "layouts.csv", "w", newline="") as f:
         if finalAppleID is None:
             continue
 
+        actionIDToCombo = {}
         baseKey = {}
         # get the base keys
         extract_keys(root=root, mapSet=mapSet, index=baseIndex, baseIndex=baseIndex, baseKey=baseKey,
@@ -120,6 +120,5 @@ with open(config.logsDir / "layouts.csv", "w", newline="") as f:
             ]
         )
 
-# it was because of "english" countries I named it eCountries. that's where it came from
 write_files(config.logsDir, countries, languages, characters, keyCombos, compositions, unMatches, matches)
-print("seeded all files")
+print("Wrote all files")

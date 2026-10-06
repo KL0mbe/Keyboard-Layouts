@@ -1,9 +1,6 @@
 name,apple_id,source
 hungarian,com.apple.keylayout.Hungarian,Display
 swedish,com.apple.keylayout.Swedish,Override
-italian,com.apple.keylayout.Italian,Override
-spanish,com.apple.keylayout.Spanish,Override
-polish,com.apple.keylayout.Polish,Override
 icelandic,com.apple.keylayout.Icelandic,Display
 inuttitutnunavik,com.apple.keylayout.InuttitutNunavik,Stem
 canadian,com.apple.keylayout.Canadian,Display
@@ -35,8 +32,10 @@ belgian,com.apple.keylayout.Belgian,Display
 lithuanian,com.apple.keylayout.Lithuanian,Display
 italian-pro,com.apple.keylayout.Italian-Pro,Stem
 bulgarian,com.apple.keylayout.Bulgarian,Stem
+italian,com.apple.keylayout.Italian,Override
 byelorussian,com.apple.keylayout.Byelorussian,Stem
 afghanpashto,com.apple.keylayout.AfghanPashto,Display
+spanish,com.apple.keylayout.Spanish,Override
 armenian-hmqwerty,com.apple.keylayout.Armenian-HMQWERTY,Display
 greek,com.apple.keylayout.Greek,Display
 spanish-iso,com.apple.keylayout.Spanish-ISO,Stem
@@ -74,6 +73,7 @@ armenian-westernqwerty,com.apple.keylayout.Armenian-WesternQWERTY,Display
 cherokee-nation,com.apple.keylayout.Cherokee-Nation,Display
 bulgarian-phonetic,com.apple.keylayout.Bulgarian-Phonetic,Stem
 cherokee-qwerty,com.apple.keylayout.Cherokee-QWERTY,Display
+polish,com.apple.keylayout.Polish,Override
 british,com.apple.keylayout.British,Display
 irish,com.apple.keylayout.Irish,Display
 arabic,com.apple.keylayout.Arabic,Display

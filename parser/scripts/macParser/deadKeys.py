@@ -12,9 +12,11 @@ def recursive_steps(root, state, actionIdToCombo):
                 if when.get("state") == "none":
                     return [combos]
                 else:
-                    return recursive_steps(root, when.get("state"), actionIdToCombo) + [combos]
-    return []
-
+                    nextStep = recursive_steps(root, when.get("state"), actionIdToCombo)
+                    if nextStep is None:
+                        return None
+                    return  nextStep + [combos]
+    return None 
 
 def extract_dead_keys(root, characters, actionIDToCombo, compositions, finalAppleID):
     for action in root.findall("actions/action"):

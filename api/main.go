@@ -37,11 +37,13 @@ func getCountries(pool *pgxpool.Pool) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		rows, err := pool.Query(context.Background(), "SELECT * FROM countries")
 		if err != nil {
-			http.Error(w, "Countries Query failed: "+err.Error(), http.StatusInternalServerError)
+			log.Println("countries query:", err)
+			http.Error(w, "Countries Query failed", http.StatusInternalServerError)
 			return
 		}
 		results, err := pgx.CollectRows(rows, pgx.RowToMap)
 		if err != nil {
+			log.Println("countries collect rows:", err)
 			http.Error(w, "Countries: CollectRows failed", http.StatusInternalServerError)
 			return
 		}

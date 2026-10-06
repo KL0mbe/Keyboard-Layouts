@@ -14,10 +14,10 @@ def _strip(m):
 
 path = config.parserDir / "Apple Keyboard Layouts"
 for file in path.glob("*.keylayout"):
+    # Skip Logitech layouts
+    if file.name.startswith("Logitech"):
+        continue
     raw = file.read_text(encoding="UTF-8")
     cleaned = FORBIDDEN.sub(_strip, raw)
-    # Skip Logitech layouts
-    if file.name.split(" ")[0] == "Logitech":
-        continue
-    with open(config.parserDir / "Cleaned Apple Keyboard layouts" / file.name, "w") as layout:
+    with open(config.parserDir / "Cleaned Apple Keyboard layouts" / file.name, "w", encoding="utf-8") as layout:
         layout.write(cleaned)
