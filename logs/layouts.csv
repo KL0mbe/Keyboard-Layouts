@@ -1,90 +1,214 @@
 platform,language,country,layout,status,english_name,native_name,klo,klid,apple_id
-macOS,hu,Magyarország,qwertz,active,Hungarian,Magyar,m-hu-HU,,com.apple.keylayout.Hungarian
-macOS,sv,Sverige,qwerty,active,Swedish – Legacy,Svensk – äldre,m-sv-SE,,com.apple.keylayout.Swedish
-macOS,is,Ísland,qwerty,active,Icelandic,Icelandic,m-is-IS,,com.apple.keylayout.Icelandic
-macOS,iu,ᑲᓇᑕᒥ,qwerty,active,Inuktitut – Nunavik,Inuktitut – Nunavik,m-iu-CA,,com.apple.keylayout.InuttitutNunavik
-macOS,en,Canada,qwerty,active,Canadian,Canadian,m-en-CA,,com.apple.keylayout.Canadian
-macOS,sk,Slovensko,qwertz,active,Slovak,Slovenská,m-sk-SK,,com.apple.keylayout.Slovak
-macOS,sr,Србија,qwerty,active,Serbian (Latin),Serbian (Latin),m-sr-RS,,com.apple.keylayout.Serbian-Latin
-macOS,ar,X,other,active,Arabic – QWERTY,العربية – QWERTY,m-ar-X,,com.apple.keylayout.Arabic-QWERTY
-macOS,tr,Türkiye,fgğıod,active,Turkish F – Legacy,Türkçe F - (Eski),m-tr-TR,,com.apple.keylayout.Turkish
-macOS,fr,France,azerty,active,French – Numerical,Français – Numérique,m-fr-FR,,com.apple.keylayout.French-numerical
-macOS,pt,Portugal,qwerty,active,Portuguese,Portuguese,m-pt-PT,,com.apple.keylayout.Portuguese
-macOS,fr,Suisse,qwertz,active,Swiss French,Suisse romand,m-fr-CH,,com.apple.keylayout.SwissFrench
-macOS,he,X,other,active,Hebrew – QWERTY,עברית – QWERTY,m-he-X,,com.apple.keylayout.Hebrew-QWERTY
-macOS,de,Deutschland,qwertz,active,German,Deutsch,m-de-DE,,com.apple.keylayout.German
-macOS,az,Azərbaycan,other,active,Azeri,Azeri,m-az-AZ,,com.apple.keylayout.Azeri
-macOS,ru,Россия,other,active,Russian,Русская,m-ru-RU,,com.apple.keylayout.Russian
-macOS,no,Norge,qwerty,active,Norwegian – Extended,Norsk – utvidet,m-no-NO,,com.apple.keylayout.NorwegianExtended
-macOS,uk,Україна,other,active,Ukrainian,Українська,m-uk-UA,,com.apple.keylayout.Ukrainian-PC
-macOS,fo,Føroyar,qwerty,active,Faroese,Faroese,m-fo-FO,,com.apple.keylayout.Faroese
-macOS,ro,România,qwerty,active,Romanian,Română,m-ro-RO,,com.apple.keylayout.Romanian
-macOS,uz,Afgʻoniston,other,active,Afghan Uzbek,Afghan Uzbek,m-uz-AF,,com.apple.keylayout.AfghanUzbek
-macOS,mi,Aotearoa,qwerty,active,Māori,Māori,m-mi-NZ,,com.apple.keylayout.Maori
-macOS,pt,Brasil,qwerty,active,Brazilian,Brazilian,m-pt-BR,,com.apple.keylayout.Brazilian-Pro
-macOS,et,Eesti,qwerty,active,Estonian,Estonian,m-et-EE,,com.apple.keylayout.Estonian
-macOS,iu,ᑲᓇᑕᒥ,qwerty,active,Inuktitut – Nunavut,Inuktitut – Nunavut,m-iu-CA-1,,com.apple.keylayout.Inuktitut-Nunavut
-macOS,en,Australia,qwerty,active,Australian,Australian,m-en-AU,,com.apple.keylayout.Australian
-macOS,fi,Suomi,qwerty,active,Finnish – Extended,Suomalainen – laajennettu,m-fi-FI,,com.apple.keylayout.FinnishExtended
-macOS,fr,France,azerty,active,French,Français,m-fr-FR-1,,com.apple.keylayout.French
-macOS,iu,ᑲᓇᑕᒥ,qwerty,active,Inuktitut – QWERTY,Inuktitut – QWERTY,m-iu-CA-2,,com.apple.keylayout.Inuktitut-QWERTY
-macOS,nl,België,azerty,active,Belgian,Belgisch,m-nl-BE,,com.apple.keylayout.Belgian
-macOS,lt,Lietuva,qwerty,active,Lithuanian,Lithuanian,m-lt-LT,,com.apple.keylayout.Lithuanian
-macOS,it,Italia,qwerty,active,Italian,Italiano,m-it-IT,,com.apple.keylayout.Italian-Pro
-macOS,bg,България,other,active,Bulgarian – Standard,Bulgarian – Standard,m-bg-BG,,com.apple.keylayout.Bulgarian
-macOS,it,Italia,other,active,Italian – QZERTY,Italiano - QZERTY,m-it-IT-1,,com.apple.keylayout.Italian
-macOS,be,Беларусь,other,active,Belarusian,Belarusian,m-be-BY,,com.apple.keylayout.Byelorussian
-macOS,ps,افغانستان,other,active,Afghan Pashto,Afghan Pashto,m-ps-AF,,com.apple.keylayout.AfghanPashto
-macOS,es,X,qwerty,active,Spanish – Legacy,Español – Teclado antiguo,m-es-X,,com.apple.keylayout.Spanish
-macOS,hy,Հայաստան,other,active,Armenian – HM QWERTY,Armenian – HM QWERTY,m-hy-AM,,com.apple.keylayout.Armenian-HMQWERTY
-macOS,el,Ελλάδα,other,active,Greek,Ελληνικό,m-el-GR,,com.apple.keylayout.Greek
-macOS,es,X,qwerty,active,Spanish,Español,m-es-X-1,,com.apple.keylayout.Spanish-ISO
-macOS,fi,Suomi,qwerty,active,Finnish,Suomi,m-fi-FI-1,,com.apple.keylayout.Finnish
-macOS,he,X,other,active,Hebrew,עברית,m-he-X-1,,com.apple.keylayout.Hebrew
+macOS,mid,X,other,active,Mandaic – QWERTY,Mandaic – QWERTY,m-mid-X,,com.apple.keylayout.Mandaic-QWERTY
 macOS,th,ไทย,other,active,Thai,ไทย,m-th-TH,,com.apple.keylayout.Thai
-macOS,el,Ελλάδα,other,active,Greek – Polytonic,Ελληνικό – Πολυτονικό,m-el-GR-1,,com.apple.keylayout.GreekPolytonic
-macOS,de,Schweiz,qwertz,active,Swiss German,"Schweiz, deutsch",m-de-CH,,com.apple.keylayout.SwissGerman
-macOS,pa,ਭਾਰਤ,other,active,Gurmukhi – QWERTY,Gurmukhi – QWERTY,m-pa-IN,,com.apple.keylayout.Gurmukhi-QWERTY
-macOS,de,Österreich,qwertz,active,Austrian,Österreichisch,m-de-AT,,com.apple.keylayout.Austrian
-macOS,en,United States,qwerty,active,U.S.,U.S.,m-en-US,,com.apple.keylayout.US
-macOS,pa,ਭਾਰਤ,other,active,Gurmukhi – Standard,Gurmukhi – Standard,m-pa-IN-1,,com.apple.keylayout.Gurmukhi
-macOS,mk,Северна Македонија,other,active,Macedonian,Macedonian,m-mk-MK,,com.apple.keylayout.Macedonian
-macOS,lv,Latvija,qwerty,active,Latvian,Latvian,m-lv-LV,,com.apple.keylayout.Latvian
-macOS,en,United States,qwerty,active,ABC – Extended,ABC – Extended,m-en-US-1,,com.apple.keylayout.USExtended
+macOS,nv,United States,qwerty,active,Navajo,Navajo,m-nv-US,,com.apple.keylayout.Navajo
+macOS,ro,România,qwerty,active,Romanian – Standard,Română – Standard,m-ro-RO,,com.apple.keylayout.Romanian-Standard
+macOS,et,Eesti,qwerty,active,Estonian,Estonian,m-et-EE,,com.apple.keylayout.Estonian
+macOS,smj,Sweden,other,active,Lule Sámi (Sweden),Lule Sámi (Sweden),m-smj-SE,,com.apple.keylayout.JulevSami
+macOS,sv,Sverige,qwerty,active,Swedish,Svensk,m-sv-SE,,com.apple.keylayout.Swedish-Pro
+macOS,hr,Hrvatska,qwertz,active,Croatian – QWERTZ,Hrvatski – QWERTZ,m-hr-HR,,com.apple.keylayout.Croatian-PC
+macOS,he,X,other,active,Hebrew,עברית,m-he-X,,com.apple.keylayout.Hebrew
+macOS,enc,United Kingdom,qwerty,active,British,British,m-enc-GB,,com.apple.keylayout.British
+macOS,enc,United States,qwerty,active,U.S.,U.S.,m-enc-US,,com.apple.keylayout.US
+macOS,smj,Norway,other,active,Lule Sámi (Norway),Lule Sámi (Norway),m-smj-NO,,com.apple.keylayout.JulevSami-Norway
+macOS,mai,भारत,other,active,Maithili – Standard,Maithili – Standard,m-mai-IN,,com.apple.keylayout.Maithili
+macOS,bn,X,other,active,Bangla – QWERTY,Bangla – QWERTY,m-bn-X,,com.apple.keylayout.Bangla-QWERTY
+macOS,bn,ভারত,other,active,Bangla – Standard,Bangla – Standard,m-bn-IN,,com.apple.keylayout.Bangla
 macOS,th,ไทย,other,active,Thai – Pattachote,ไทย – ปัตตะโชติ,m-th-TH-1,,com.apple.keylayout.Thai-PattaChote
-macOS,sl,Slovenija,qwerty,active,Slovenian,Slovenian,m-sl-SI,,com.apple.keylayout.Slovenian
-macOS,hi,भारत,other,active,Devanagari – QWERTY,देवनागरी – QWERTY,m-hi-IN,,com.apple.keylayout.Devanagari-QWERTY
-macOS,no,Norge,qwerty,active,Norwegian,Norsk,m-no-NO-1,,com.apple.keylayout.Norwegian
-macOS,ga,Éire,qwerty,active,Irish – Extended,Irish – Extended,m-ga-IE,,com.apple.keylayout.IrishExtended
-macOS,sv,Sverige,qwerty,active,Swedish,Svensk,m-sv-SE-1,,com.apple.keylayout.Swedish-Pro
-macOS,iu,ᑲᓇᑕᒥ,qwerty,active,Inuktitut – Nutaaq,Inuktitut – Nutaaq,m-iu-CA-3,,com.apple.keylayout.Inuktitut-Nutaaq
-macOS,fr,Canada,qwerty,active,Canadian – CSA,Canadien – CSA,m-fr-CA,,com.apple.keylayout.Canadian-CSA
-macOS,fa,ایران,other,active,Persian – Standard,Persian – Standard,m-fa-IR,,com.apple.keylayout.Persian-ISIRI2901
-macOS,gu,ભારત,other,active,Gujarati – Standard,Gujarati – Standard,m-gu-IN,,com.apple.keylayout.Gujarati
-macOS,sr,Србија,other,active,Serbian,Serbian,m-sr-RS-1,,com.apple.keylayout.Serbian
-macOS,da,Danmark,qwerty,active,Danish,Dansk,m-da-DK,,com.apple.keylayout.Danish
+macOS,enc,X,other,active,Colemak,Colemak,m-enc-X,,com.apple.keylayout.Colemak
+macOS,hmn,X,other,active,Hmong (Pahawh),Hmong (Pahawh),m-hmn-X,,com.apple.keylayout.Pahawh-Hmong
+macOS,uk,Україна,other,active,Ukrainian,Українська,m-uk-UA,,com.apple.keylayout.Ukrainian-PC
+macOS,es,X,qwerty,active,Spanish,Español,m-es-X,,com.apple.keylayout.Spanish-ISO
+macOS,doi,भारत,other,active,Dogri – Standard,Dogri – Standard,m-doi-IN,,com.apple.keylayout.Dogri
+macOS,mt,Malta,qwerty,active,Maltese,Maltese,m-mt-MT,,com.apple.keylayout.Maltese
 macOS,cs,Česko,qwerty,active,Czech – QWERTY,Česká – QWERTY,m-cs-CZ,,com.apple.keylayout.Czech-QWERTY
-macOS,nl,Nederland,qwerty,active,Dutch,Nederlands,m-nl-NL,,com.apple.keylayout.Dutch
-macOS,hi,भारत,other,active,Hindi – Standard,हिन्दी – मानक,m-hi-IN-1,,com.apple.keylayout.Devanagari
-macOS,fa,ایران,other,active,Persian – Legacy,Persian – Legacy,m-fa-IR-1,,com.apple.keylayout.Persian
-macOS,se,X,other,active,North Sámi,North Sámi,m-se-X,,com.apple.keylayout.NorthernSami
-macOS,ne,नेपाल,other,active,Nepali – Remington,Nepali – Remington,m-ne-NP,,com.apple.keylayout.Nepali
-macOS,hy,Հայաստան,other,active,Armenian – Western QWERTY,Armenian – Western QWERTY,m-hy-AM-1,,com.apple.keylayout.Armenian-WesternQWERTY
-macOS,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,qwerty,active,Cherokee – Nation,Cherokee – Nation,m-chr-US,,com.apple.keylayout.Cherokee-Nation
+macOS,yo,Nàìjíríà,qwerty,active,Yoruba,Yoruba,m-yo-NG,,com.apple.keylayout.Yoruba
+macOS,pt,Brasil,qwerty,active,Brazilian – ABNT2,Brazilian – ABNT2,m-pt-BR,,com.apple.keylayout.Brazilian-ABNT2
+macOS,se,X,other,active,Sámi – PC,Sámi – PC,m-se-X,,com.apple.keylayout.Sami-PC
+macOS,ml,ഇന്ത്യ,other,active,Malayalam – QWERTY,Malayalam – QWERTY,m-ml-IN,,com.apple.keylayout.Malayalam-QWERTY
+macOS,el,Ελλάδα,other,active,Greek,Ελληνικό,m-el-GR,,com.apple.keylayout.Greek
+macOS,sd,پاڪستان,other,active,Sindhi,Sindhi,m-sd-PK,,com.apple.keylayout.Sindhi
+macOS,sq,Shqipëri,qwertz,active,Albanian,Albanian,m-sq-AL,,com.apple.keylayout.Albanian
+macOS,ru,Россия,other,active,Russian – QWERTY,Русская — QWERTY,m-ru-RU,,com.apple.keylayout.Russian-Phonetic
+macOS,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,other,active,Cherokee – Nation,Cherokee – Nation,m-chr-US,,com.apple.keylayout.Cherokee-Nation
+macOS,si,ශ්‍රී ලංකාව,other,active,Sinhala,Sinhala,m-si-LK,,com.apple.keylayout.Sinhala
+macOS,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,other,active,Cherokee – QWERTY,Cherokee – QWERTY,m-chr-US-1,,com.apple.keylayout.Cherokee-QWERTY
+macOS,sju,Sweden,other,active,Ume Sámi,Ume Sámi,m-sju-SE,,com.apple.keylayout.UmeSami
+macOS,fr,France,azerty,active,French,Français,m-fr-FR,,com.apple.keylayout.French
+macOS,asz,India,other,active,Assamese – Standard,Assamese – Standard,m-asz-IN,,com.apple.keylayout.Assamese
+macOS,uz,Oʻzbekiston,other,active,Uzbek (Cyrillic),Uzbek (Cyrillic),m-uz-UZ,,com.apple.keylayout.Uzbek-Cyrillic
+macOS,am,X,other,active,Geʽez,Geʽez,m-am-X,,com.apple.keylayout.Geez-QWERTY
+macOS,fr,Canada,qwerty,active,Canadian – PC,Canadien – PC,m-fr-CA,,com.apple.keylayout.CanadianFrench-PC
+macOS,ky,Кыргызстан,other,active,Kyrgyz,Kyrgyz,m-ky-KG,,com.apple.keylayout.Kyrgyz-Cyrillic
+macOS,pt,Portugal,qwerty,active,Portuguese,Portuguese,m-pt-PT,,com.apple.keylayout.Portuguese
+macOS,iu,ᑲᓇᑕᒥ,other,active,Inuktitut – Nunavut,Inuktitut – Nunavut,m-iu-CA,,com.apple.keylayout.Inuktitut-Nunavut
+macOS,bg,България,other,active,Bulgarian – Standard,Bulgarian – Standard,m-bg-BG,,com.apple.keylayout.Bulgarian
+macOS,smn,Suomâ,other,active,Inari Sámi,Inari Sámi,m-smn-FI,,com.apple.keylayout.InariSami
+macOS,sms,Lääʹddjânnam,other,active,Skolt Sámi,Skolt Sámi,m-sms-FI,,com.apple.keylayout.SkoltSami
 macOS,bg,България,other,active,Bulgarian – QWERTY,Bulgarian – QWERTY,m-bg-BG-1,,com.apple.keylayout.Bulgarian-Phonetic
-macOS,chr,ᏌᏊ ᎢᏳᎾᎵᏍᏔᏅ ᏍᎦᏚᎩ,qwerty,active,Cherokee – QWERTY,Cherokee – QWERTY,m-chr-US-1,,com.apple.keylayout.Cherokee-QWERTY
-macOS,pl,Polska,qwertz,active,Polish – QWERTZ,Polski QWERTZ,m-pl-PL,,com.apple.keylayout.Polish
-macOS,en,United Kingdom,qwerty,active,British,British,m-en-GB,,com.apple.keylayout.British
-macOS,ga,Éire,qwerty,active,Irish,Irish,m-ga-IE-1,,com.apple.keylayout.Irish
-macOS,ar,X,other,active,Arabic,العربية,m-ar-X-1,,com.apple.keylayout.Arabic
-macOS,vi,Việt Nam,qwerty,active,Vietnamese,Việt Nam,m-vi-VN,,com.apple.keylayout.Vietnamese
-macOS,tr,Türkiye,qwerty,active,Turkish Q,Türkçe - Q (Standart),m-tr-TR-1,,com.apple.keylayout.Turkish-QWERTY-PC
-macOS,cs,Česko,qwertz,active,Czech,Česká,m-cs-CZ-1,,com.apple.keylayout.Czech
-macOS,tr,Türkiye,qwerty,active,Turkish Q – Legacy,Türkçe Q - (Eski),m-tr-TR-2,,com.apple.keylayout.Turkish-QWERTY
-macOS,hr,Hrvatska,qwerty,active,Croatian – QWERTY,Hrvatski – QWERTY,m-hr-HR,,com.apple.keylayout.Croatian
+macOS,lo,ລາວ,other,active,Lao,Lao,m-lo-LA,,com.apple.keylayout.Lao
+macOS,mr,भारत,other,active,Marathi – Standard,Marathi – Standard,m-mr-IN,,com.apple.keylayout.Marathi
+macOS,el,Ελλάδα,other,active,Greek – Polytonic,Ελληνικό – Πολυτονικό,m-el-GR-1,,com.apple.keylayout.GreekPolytonic
+macOS,uk,Україна,other,active,Ukrainian – Legacy,Українська — класична,m-uk-UA-1,,com.apple.keylayout.Ukrainian
+macOS,sjd,Russia,other,active,Kildin Sámi,Kildin Sámi,m-sjd-RU,,com.apple.keylayout.KildinSami
+macOS,tk,Türkmenistan,other,active,Turkmen,Turkmen,m-tk-TM,,com.apple.keylayout.Turkmen
+macOS,brx,भारत,other,active,Bodo – Standard,Bodo – Standard,m-brx-IN,,com.apple.keylayout.Bodo
+macOS,enc,Canada,qwerty,active,Canadian,Canadian,m-enc-CA,,com.apple.keylayout.Canadian
+macOS,se,Ruoŧŧa,qwerty,active,Swedish Sámi – PC,Swedish Sámi – PC,m-se-SE,,com.apple.keylayout.SwedishSami-PC
+macOS,uz,Afgʻoniston,other,active,Afghan Uzbek,Afghan Uzbek,m-uz-AF,,com.apple.keylayout.AfghanUzbek
+macOS,fi,Suomi,qwerty,active,Finnish – Extended,Suomalainen – laajennettu,m-fi-FI,,com.apple.keylayout.FinnishExtended
+macOS,enc,United Kingdom,qwerty,active,British – PC,British – PC,m-enc-GB-1,,com.apple.keylayout.British-PC
+macOS,sk,Slovensko,qwerty,active,Slovak – QWERTY,Slovenská – QWERTY,m-sk-SK,,com.apple.keylayout.Slovak-QWERTY
+macOS,enc,United States,qwerty,active,U.S. International – PC,U.S. International – PC,m-enc-US-1,,com.apple.keylayout.USInternational-PC
+macOS,fa,ایران,other,active,Persian – QWERTY,Persian – QWERTY,m-fa-IR,,com.apple.keylayout.Persian-QWERTY
+macOS,si,ශ්‍රී ලංකාව,other,active,Sinhala – QWERTY,Sinhala – QWERTY,m-si-LK-1,,com.apple.keylayout.Sinhala-QWERTY
+macOS,ug,جۇڭگو,other,active,Uyghur,Uyghur,m-ug-CN,,com.apple.keylayout.Uyghur
+macOS,pl,Polska,qwerty,active,Polish,Polski,m-pl-PL,,com.apple.keylayout.PolishPro
+macOS,bo,X,other,active,Tibetan – Otani,Tibetan – Otani,m-bo-X,,com.apple.keylayout.TibetanOtaniUS
+macOS,te,భారతదేశం,other,active,Telugu – QWERTY,Telugu – QWERTY,m-te-IN,,com.apple.keylayout.Telugu-QWERTY
+macOS,de,Deutschland,qwertz,active,German,Deutsch,m-de-DE,,com.apple.keylayout.German
+macOS,pt,Brasil,qwerty,active,Brazilian – Legacy,Brazilian – Legacy,m-pt-BR-1,,com.apple.keylayout.Brazilian
+macOS,lv,Latvija,qwerty,active,Latvian,Latvian,m-lv-LV,,com.apple.keylayout.Latvian
+macOS,mni,ইন্দিয়া,other,active,Manipuri (Meetei Mayek),Manipuri (Meetei Mayek),m-mni-IN,,com.apple.keylayout.Manipuri-MeeteiMayek
+macOS,enc,Australia,qwerty,active,Australian,Australian,m-enc-AU,,com.apple.keylayout.Australian
+macOS,enc,X,qwerty,active,ABC,ABC,m-enc-X-1,,com.apple.keylayout.ABC
+macOS,huo,Hungary,qwertz,active,Hungarian,Hungarian,m-huo-HU,,com.apple.keylayout.Hungarian
+macOS,kab,Lezzayer,qwerty,active,Kabyle – QWERTY,Kabyle – QWERTY,m-kab-DZ,,com.apple.keylayout.Kabyle-QWERTY
+macOS,dz,འབྲུག,other,active,Dzongkha,Dzongkha,m-dz-BT,,com.apple.keylayout.Dzongkha
+macOS,ru,Россия,other,active,Russian – PC,Русская — ПК,m-ru-RU-1,,com.apple.keylayout.RussianWin
+macOS,cic,United States,qwerty,active,Chickasaw,Chickasaw,m-cic-US,,com.apple.keylayout.Chickasaw
+macOS,is,Ísland,qwerty,active,Icelandic,Icelandic,m-is-IS,,com.apple.keylayout.Icelandic
+macOS,gu,ભારત,other,active,Gujarati – QWERTY,Gujarati – QWERTY,m-gu-IN,,com.apple.keylayout.Gujarati-QWERTY
+macOS,fr,France,azerty,active,French – Numerical,Français – Numérique,m-fr-FR-1,,com.apple.keylayout.French-numerical
+macOS,ig,Naịjịrịa,qwerty,active,Igbo,Igbo,m-ig-NG,,com.apple.keylayout.Igbo
+macOS,az,Azərbaycan,other,active,Azeri,Azeri,m-az-AZ,,com.apple.keylayout.Azeri
+macOS,sm,Samoa,qwerty,active,Samoan,Samoan,m-sm-WS,,com.apple.keylayout.Samoan
+macOS,sk,Slovensko,qwertz,active,Slovak,Slovenská,m-sk-SK-1,,com.apple.keylayout.Slovak
+macOS,se,Suopma,qwerty,active,Finnish Sámi – PC,Finnish Sámi – PC,m-se-FI,,com.apple.keylayout.FinnishSami-PC
+macOS,iu,ᑲᓇᑕᒥ,other,active,Inuktitut – Nunavik,Inuktitut – Nunavik,m-iu-CA-1,,com.apple.keylayout.InuttitutNunavik
+macOS,ml,ഇന്ത്യ,other,active,Malayalam – Standard,Malayalam – Standard,m-ml-IN-1,,com.apple.keylayout.Malayalam
+macOS,apw,United States,qwerty,active,Apache,Apache,m-apw-US,,com.apple.keylayout.Apache
+macOS,rej,Indonesia,other,active,Rejang – QWERTY,Rejang – QWERTY,m-rej-ID,,com.apple.keylayout.Rejang-QWERTY
+macOS,iu,ᑲᓇᑕᒥ,other,active,Inuktitut – Nutaaq,Inuktitut – Nutaaq,m-iu-CA-2,,com.apple.keylayout.Inuktitut-Nutaaq
+macOS,te,భారతదేశం,other,active,Telugu – Standard,Telugu – Standard,m-te-IN-1,,com.apple.keylayout.Telugu
+macOS,ro,România,qwerty,active,Romanian,Română,m-ro-RO-1,,com.apple.keylayout.Romanian
+macOS,mi,Aotearoa,qwerty,active,Māori,Māori,m-mi-NZ,,com.apple.keylayout.Maori
+macOS,enc,X,other,active,Dvorak – Right-Handed,Dvorak – Right-Handed,m-enc-X-2,,com.apple.keylayout.Dvorak-Right
+macOS,sr,Србија,other,active,Serbian,Serbian,m-sr-RS,,com.apple.keylayout.Serbian
+macOS,toz,Tonga,qwerty,active,Tongan,Tongan,m-toz-TO,,com.apple.keylayout.Tongan
+macOS,iu,ᑲᓇᑕᒥ,other,active,Inuktitut – Nattilik,Inuktitut – Nattilik,m-iu-CA-3,,com.apple.keylayout.Inuktitut-Nattilik
+macOS,fa,ایران,other,active,Persian – Legacy,Persian – Legacy,m-fa-IR-1,,com.apple.keylayout.Persian
+macOS,kn,ಭಾರತ,other,active,Kannada – QWERTY,Kannada – QWERTY,m-kn-IN,,com.apple.keylayout.Kannada-QWERTY
+macOS,ff,X,other,active,Adlam,Adlam,m-ff-X,,com.apple.keylayout.Adlam-QWERTY
+macOS,syr,X,other,active,Syriac – Arabic,Syriac – Arabic,m-syr-X,,com.apple.keylayout.Syriac-Arabic
+macOS,lt,Lietuva,qwerty,active,Lithuanian,Lithuanian,m-lt-LT,,com.apple.keylayout.Lithuanian
+macOS,rhg,X,other,active,Hanifi Rohingya,Hanifi Rohingya,m-rhg-X,,com.apple.keylayout.Hanifi-Rohingya-QWERTY
+macOS,akq,Ghana,other,active,Akan,Akan,m-akq-GH,,com.apple.keylayout.Akan
+macOS,ar,X,other,active,Arabic – AZERTY,العربية – AZERTY,m-ar-X,,com.apple.keylayout.Arabic-AZERTY
+macOS,se,Norga,qwerty,active,Norwegian Sámi – PC,Norwegian Sámi – PC,m-se-NO,,com.apple.keylayout.NorwegianSami-PC
+macOS,fr,Suisse,qwertz,active,Swiss French,Suisse romand,m-fr-CH,,com.apple.keylayout.SwissFrench
+macOS,fr,France,azerty,active,French – PC,Français – PC,m-fr-FR-2,,com.apple.keylayout.French-PC
+macOS,nl,België,azerty,active,Belgian,Belgisch,m-nl-BE,,com.apple.keylayout.Belgian
+macOS,it,Italia,qwerty,active,Italian,Italiano,m-it-IT,,com.apple.keylayout.Italian-Pro
+macOS,ka,საქართველო,other,active,Georgian – QWERTY,Georgian – QWERTY,m-ka-GE,,com.apple.keylayout.Georgian-QWERTY
+macOS,es,X,qwerty,active,Latin American,Latinoamericano,m-es-X-1,,com.apple.keylayout.LatinAmerican
+macOS,hi,भारत,other,active,Hindi – Standard,हिन्दी – मानक,m-hi-IN,,com.apple.keylayout.Devanagari
+macOS,it,Italia,other,active,Italian – QZERTY,Italiano - QZERTY,m-it-IT-1,,com.apple.keylayout.Italian
+macOS,kab,Lezzayer,azerty,active,Kabyle – AZERTY,Kabyle – AZERTY,m-kab-DZ-1,,com.apple.keylayout.Kabyle-AZERTY
+macOS,kmr,X,qwerty,active,Kurmanji Kurdish,Kurmanji Kurdish,m-kmr-X,,com.apple.keylayout.Kurdish-Kurmanji
+macOS,km,កម្ពុជា,other,active,Khmer,Khmer,m-km-KH,,com.apple.keylayout.Khmer
+macOS,gaa,Ireland,qwerty,active,Irish,Irish,m-gaa-IE,,com.apple.keylayout.Irish
+macOS,tr,Türkiye,qwerty,active,Turkish Q,Türkçe - Q (Standart),m-tr-TR,,com.apple.keylayout.Turkish-QWERTY-PC
+macOS,ar,X,other,active,Arabic – QWERTY,العربية – QWERTY,m-ar-X-1,,com.apple.keylayout.Arabic-QWERTY
+macOS,sr,Србија,qwerty,active,Serbian (Latin),Serbian (Latin),m-sr-RS-1,,com.apple.keylayout.Serbian-Latin
+macOS,ne,भारत,other,active,Nepali – Standard (India),Nepali – Standard (India),m-ne-IN,,com.apple.keylayout.Nepali-IS16350
+macOS,my,မြန်မာ,other,active,Myanmar – QWERTY,Myanmar – QWERTY,m-my-MM,,com.apple.keylayout.Myanmar-QWERTY
+macOS,ar,X,other,active,Arabic,العربية,m-ar-X-2,,com.apple.keylayout.Arabic
+macOS,ur,پاکستان,other,active,Urdu,Urdu,m-ur-PK,,com.apple.keylayout.Urdu
+macOS,ar,X,other,active,Arabic – 123,العربية – 123,m-ar-X-3,,com.apple.keylayout.Arabic-NorthAfrica
+macOS,or,ଭାରତ,other,active,Odia – Standard,Odia – Standard,m-or-IN,,com.apple.keylayout.Oriya
+macOS,mk,Северна Македонија,other,active,Macedonian,Macedonian,m-mk-MK,,com.apple.keylayout.Macedonian
+macOS,zgh,ⵍⵎⵖⵔⵉⴱ,other,active,Tifinagh,Tifinagh,m-zgh-MA,,com.apple.keylayout.Tifinagh-AZERTY
 macOS,cy,Y Deyrnas Unedig,qwerty,active,Welsh,Welsh,m-cy-GB,,com.apple.keylayout.Welsh
-macOS,gu,ભારત,other,active,Gujarati – QWERTY,Gujarati – QWERTY,m-gu-IN-1,,com.apple.keylayout.Gujarati-QWERTY
-macOS,fa,افغانستان,other,active,Afghan Dari,Afghan Dari,m-fa-AF,,com.apple.keylayout.AfghanDari
-macOS,ru,Россия,other,active,Russian – QWERTY,Русская — QWERTY,m-ru-RU-1,,com.apple.keylayout.Russian-Phonetic
+macOS,nnp,India,other,active,Wancho – QWERTY,Wancho – QWERTY,m-nnp-IN,,com.apple.keylayout.Wancho-QWERTY
+macOS,he,X,other,active,Hebrew – QWERTY,עברית – QWERTY,m-he-X-1,,com.apple.keylayout.Hebrew-QWERTY
+macOS,cs,Česko,qwertz,active,Czech,Česká,m-cs-CZ-1,,com.apple.keylayout.Czech
+macOS,iu,ᑲᓇᑕᒥ,other,active,Inuktitut – QWERTY,Inuktitut – QWERTY,m-iu-CA-4,,com.apple.keylayout.Inuktitut-QWERTY
+macOS,cv,Раҫҫей,other,active,Chuvash,Chuvash,m-cv-RU,,com.apple.keylayout.Chuvash
+macOS,sje,Sweden,other,active,Pite Sámi,Pite Sámi,m-sje-SE,,com.apple.keylayout.PiteSami
+macOS,mid,X,other,active,Mandaic – Arabic,Mandaic – Arabic,m-mid-X-1,,com.apple.keylayout.Mandaic-Arabic
+macOS,my,မြန်မာ,other,active,Myanmar,Myanmar,m-my-MM-1,,com.apple.keylayout.Myanmar
+macOS,hr,Hrvatska,qwerty,active,Croatian – QWERTY,Hrvatski – QWERTY,m-hr-HR-1,,com.apple.keylayout.Croatian
+macOS,pqm,Canada,qwerty,active,Wolastoqey,Wolastoqey,m-pqm-CA,,com.apple.keylayout.Wolastoqey
+macOS,ckb,X,other,active,Sorani Kurdish,Sorani Kurdish,m-ckb-X,,com.apple.keylayout.Kurdish-Sorani
+macOS,kok,भारत,other,active,Konkani – Standard,Konkani – Standard,m-kok-IN,,com.apple.keylayout.Konkani
+macOS,osa,United States,other,active,Osage – QWERTY,Osage – QWERTY,m-osa-US,,com.apple.keylayout.Osage-QWERTY
+macOS,se,X,other,active,North Sámi,North Sámi,m-se-X-1,,com.apple.keylayout.NorthernSami
+macOS,es,X,qwerty,active,Spanish – Legacy,Español – Teclado antiguo,m-es-X-2,,com.apple.keylayout.Spanish
+macOS,gaa,Ireland,qwerty,active,Irish – Extended,Irish – Extended,m-gaa-IE-1,,com.apple.keylayout.IrishExtended
+macOS,tg,Тоҷикистон,other,active,Tajik (Cyrillic),Tajik (Cyrillic),m-tg-TJ,,com.apple.keylayout.Tajik-Cyrillic
+macOS,enc,United States,qwerty,active,ABC – Extended,ABC – Extended,m-enc-US-2,,com.apple.keylayout.USExtended
+macOS,uk,Україна,other,active,Ukrainian – QWERTY,Українська — QWERTY,m-uk-UA-2,,com.apple.keylayout.Ukrainian-QWERTY
+macOS,enc,India,qwerty,active,ABC – India,ABC – India,m-enc-IN,,com.apple.keylayout.ABC-India
+macOS,pl,Polska,qwertz,active,Polish – QWERTZ,Polski QWERTZ,m-pl-PL-1,,com.apple.keylayout.Polish
+macOS,no,Norge,qwerty,active,Norwegian – Extended,Norsk – utvidet,m-no-NO,,com.apple.keylayout.NorwegianExtended
 macOS,haw,ʻAmelika Hui Pū ʻIa,qwerty,active,Hawaiian,Hawaiian,m-haw-US,,com.apple.keylayout.Hawaiian
-macOS,pl,Polska,qwerty,active,Polish,Polski,m-pl-PL-1,,com.apple.keylayout.PolishPro
+macOS,huo,Hungary,qwerty,active,Hungarian – QWERTY,Hungarian – QWERTY,m-huo-HU-1,,com.apple.keylayout.Hungarian-QWERTY
+macOS,fi,Suomi,qwerty,active,Finnish,Suomi,m-fi-FI-1,,com.apple.keylayout.Finnish
+macOS,or,ଭାରତ,other,active,Odia – QWERTY,Odia – QWERTY,m-or-IN-1,,com.apple.keylayout.Oriya-QWERTY
+macOS,enc,X,other,active,Dvorak – QWERTY ⌘,Dvorak – QWERTY ⌘,m-enc-X-3,,com.apple.keylayout.DVORAK-QWERTYCMD
+macOS,pa,ਭਾਰਤ,other,active,Gurmukhi – Standard,Gurmukhi – Standard,m-pa-IN,,com.apple.keylayout.Gurmukhi
+macOS,tr,Türkiye,fgğıod,active,Turkish F – Legacy,Türkçe F - (Eski),m-tr-TR-1,,com.apple.keylayout.Turkish
+macOS,hy,Հայաստան,other,active,Armenian – HM QWERTY,Armenian – HM QWERTY,m-hy-AM,,com.apple.keylayout.Armenian-HMQWERTY
+macOS,enc,X,other,active,Dvorak,Dvorak,m-enc-X-4,,com.apple.keylayout.Dvorak
+macOS,vi,Việt Nam,qwerty,active,Vietnamese,Việt Nam,m-vi-VN,,com.apple.keylayout.Vietnamese
+macOS,de,Österreich,qwertz,active,Austrian,Österreichisch,m-de-AT,,com.apple.keylayout.Austrian
+macOS,ps,افغانستان,other,active,Afghan Pashto,Afghan Pashto,m-ps-AF,,com.apple.keylayout.AfghanPashto
+macOS,mn,Монгол,other,active,Mongolian,Mongolian,m-mn-MN,,com.apple.keylayout.Mongolian-Cyrillic
+macOS,tr,Türkiye,fgğıod,active,Turkish F,Türkçe - F (Standart),m-tr-TR-2,,com.apple.keylayout.Turkish-Standard
+macOS,mni,ইন্দিয়া,other,active,Manipuri (Bengali) – Standard,Manipuri (Bengali) – Standard,m-mni-IN-1,,com.apple.keylayout.Manipuri-Bengali
+macOS,sd,ڀارت,other,active,Sindhi (Devanagari) – Standard,Sindhi (Devanagari) – Standard,m-sd-IN,,com.apple.keylayout.Sindhi-Devanagari
+macOS,bo,X,other,active,Tibetan – Wylie,Tibetan – Wylie,m-bo-X-1,,com.apple.keylayout.Tibetan-Wylie
+macOS,ne,नेपाल,other,active,Nepali – Remington,Nepali – Remington,m-ne-NP,,com.apple.keylayout.Nepali
+macOS,enc,X,azerty,active,ABC – AZERTY,ABC – AZERTY,m-enc-X-5,,com.apple.keylayout.ABC-AZERTY
+macOS,sv,Sverige,qwerty,active,Swedish – Legacy,Svensk – äldre,m-sv-SE-1,,com.apple.keylayout.Swedish
+macOS,pt,Brasil,qwerty,active,Brazilian,Brazilian,m-pt-BR-2,,com.apple.keylayout.Brazilian-Pro
+macOS,yi,X,other,active,Yiddish – QWERTY,Yiddish – QWERTY,m-yi-X,,com.apple.keylayout.Yiddish-QWERTY
+macOS,dv,ދިވެހި ރާއްޖެ,other,active,Dhivehi,Dhivehi,m-dv-MV,,com.apple.keylayout.Dhivehi-QWERTY
+macOS,fa,افغانستان,other,active,Afghan Dari,Afghan Dari,m-fa-AF,,com.apple.keylayout.AfghanDari
+macOS,syr,X,other,active,Syriac – QWERTY,Syriac – QWERTY,m-syr-X-1,,com.apple.keylayout.Syriac-QWERTY
+macOS,sat,ᱤᱱᱰᱤᱭᱟ,other,active,Santali (Devanagari) – Standard,Santali (Devanagari) – Standard,m-sat-IN,,com.apple.keylayout.Santali-Devanagari
+macOS,da,Danmark,qwerty,active,Danish,Dansk,m-da-DK,,com.apple.keylayout.Danish
+macOS,sat,ᱤᱱᱰᱤᱭᱟ,other,active,Santali (Ol Chiki),Santali (Ol Chiki),m-sat-IN-1,,com.apple.keylayout.Santali-OlChiki
+macOS,cho,United States,qwerty,active,Choctaw,Choctaw,m-cho-US,,com.apple.keylayout.Choctaw
+macOS,bo,X,other,active,Tibetan – QWERTY,Tibetan – QWERTY,m-bo-X-2,,com.apple.keylayout.Tibetan-QWERTY
+macOS,nqo,X,other,active,N’Ko – QWERTY,N’Ko – QWERTY,m-nqo-X,,com.apple.keylayout.NKo-QWERTY
+macOS,be,Беларусь,other,active,Belarusian,Belarusian,m-be-BY,,com.apple.keylayout.Byelorussian
+macOS,pa,ਭਾਰਤ,other,active,Gurmukhi – QWERTY,Gurmukhi – QWERTY,m-pa-IN-1,,com.apple.keylayout.Gurmukhi-QWERTY
+macOS,gu,ભારત,other,active,Gujarati – Standard,Gujarati – Standard,m-gu-IN-1,,com.apple.keylayout.Gujarati
+macOS,nl,Nederland,qwerty,active,Dutch,Nederlands,m-nl-NL,,com.apple.keylayout.Dutch
+macOS,ms,X,other,active,Jawi,Jawi,m-ms-X,,com.apple.keylayout.Jawi-QWERTY
+macOS,nqo,X,other,active,N’Ko,N’Ko,m-nqo-X-1,,com.apple.keylayout.NKo
+macOS,inh,Russia,other,active,Ingush,Ingush,m-inh-RU,,com.apple.keylayout.Ingush
+macOS,fa,ایران,other,active,Persian – Standard,Persian – Standard,m-fa-IR-2,,com.apple.keylayout.Persian-ISIRI2901
+macOS,de,Schweiz,qwertz,active,Swiss German,"Schweiz, deutsch",m-de-CH,,com.apple.keylayout.SwissGerman
+macOS,sl,Slovenija,qwerty,active,Slovenian,Slovenian,m-sl-SI,,com.apple.keylayout.Slovenian
+macOS,mic,Canada,qwerty,active,Mi’kmaq,Mi’kmaq,m-mic-CA,,com.apple.keylayout.Mikmaw
+macOS,sma,X,qwerty,active,South Sámi,South Sámi,m-sma-X,,com.apple.keylayout.SouthernSami
+macOS,ru,Россия,other,active,Russian,Русская,m-ru-RU-2,,com.apple.keylayout.Russian
+macOS,he,X,other,active,Hebrew – PC,עברית – PC,m-he-X-2,,com.apple.keylayout.Hebrew-PC
+macOS,no,Norge,qwerty,active,Norwegian,Norsk,m-no-NO-1,,com.apple.keylayout.Norwegian
+macOS,kn,ಭಾರತ,other,active,Kannada – Standard,Kannada – Standard,m-kn-IN-1,,com.apple.keylayout.Kannada
+macOS,fr,Canada,qwerty,active,Canadian – CSA,Canadien – CSA,m-fr-CA-1,,com.apple.keylayout.Canadian-CSA
+macOS,hyw,X,other,active,Armenian – Western QWERTY,Armenian – Western QWERTY,m-hyw-X,,com.apple.keylayout.Armenian-WesternQWERTY
+macOS,enc,X,other,active,Dvorak – Left-Handed,Dvorak – Left-Handed,m-enc-X-6,,com.apple.keylayout.Dvorak-Left
+macOS,hi,भारत,other,active,Devanagari – QWERTY,देवनागरी – QWERTY,m-hi-IN-1,,com.apple.keylayout.Devanagari-QWERTY
+macOS,enc,X,qwertz,active,ABC – QWERTZ,ABC – QWERTZ,m-enc-X-7,,com.apple.keylayout.ABC-QWERTZ
+macOS,kk,Қазақстан,other,active,Kazakh,Kazakh,m-kk-KZ,,com.apple.keylayout.Kazakh
+macOS,sax,India,other,active,Sanskrit – Standard,Sanskrit – Standard,m-sax-IN,,com.apple.keylayout.Sanskrit
+macOS,de,Deutschland,qwertz,active,German – Standard,Deutsch – Standard,m-de-DE-1,,com.apple.keylayout.German-DIN-2137
+macOS,ks,ہِندوستان,other,active,Kashmiri (Devanagari) – Standard,Kashmiri (Devanagari) – Standard,m-ks-IN,,com.apple.keylayout.Kashmiri-Devanagari
+macOS,haq,X,qwerty,active,Hausa,Hausa,m-haq-X,,com.apple.keylayout.Hausa
+macOS,tr,Türkiye,qwerty,active,Turkish Q – Legacy,Türkçe Q - (Eski),m-tr-TR-3,,com.apple.keylayout.Turkish-QWERTY
+macOS,ar,X,other,active,Arabic – PC,العربية – PC,m-ar-X-4,,com.apple.keylayout.ArabicPC
+macOS,fo,Føroyar,qwerty,active,Faroese,Faroese,m-fo-FO,,com.apple.keylayout.Faroese

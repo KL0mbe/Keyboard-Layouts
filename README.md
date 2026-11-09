@@ -10,7 +10,7 @@ A lookup tool that maps key combinations to the characters they produce across k
 
 - **Database:** PostgreSQL: 12-table normalized schema
 - **Data pipeline:** Python: Apple `.keylayout` XML parser
-- **Layout identity:** macOS TIS registry: extracted via a Swift script
+- **Layout extraction:** [macXtract](https://github.com/KL0mbe/macxtract): My own C tool that decompiles macOS's compiled keyboard layouts into `.keylayout` XML files
 - **Backend / API:** Go
 - **Frontend:** React + TypeScript, lives at [klombe.com/keyboards](https://klombe.com/keyboards), [Source](https://github.com/KL0mbe/KL0mbe.github.io)
 - **Deployment:** Docker Compose, self hosted behind a Cloudflare Tunnel (running the stack locally does not require Cloudflare tunnel)
@@ -34,11 +34,11 @@ Every layout gets a stable identifier that bridges the gap between Windows KLID 
 
 Real layout data is messy, so most of the work is ingest:
 
-1. Parse Apple `.keylayout` XML files into key-combo → character mappings.
-2. Resolve each layout's dead key state (\<actions>, \<when state=...>, \<terminators>) into ordered multi step sequences, including chained dead key compositions.
-3. Source official layout IDs (`com.apple.keylayout.X`) from the macOS TIS registry, which is authoritative for layout identity. The layout files themselves are not.
-4. Match parsed layouts to registry IDs by name (in two passes), handling identity edge cases such as legacy vs modern name collisions.
-5. Resolve each layout's language/country, then assemble the KLO and the database rows in csv files.
+1. Extract every layout installed on macOS with macXtract. Each file is named by its official Apple ID (`com.apple.keylayout.X`) from the TIS registry, so layout identity needs no matching.
+2. Skip excluded layouts and strip control character references the XML parser can't read.
+3. Parse each `.keylayout` into key-combo → character mappings, resolving which modifier layer each combination selects.
+4. Resolve each layout's dead key state (\<actions>, \<when state=...>, \<terminators>) into ordered multi step sequences, including chained dead key compositions.
+5. Resolve each layout's language/country and native name, then assemble the KLO and the database rows in csv files.
 
 ## Queries
 
@@ -168,7 +168,7 @@ Response:
 
 - `single` lists key combos that produce the character in one press.
 - `compositions` lists multi step dead key sequences. Group entries by
-  `composition_id` and order by `step` to reconstruct each recipe the example above is one composition: press `Option + ¨` (step 1), then press `n` (step 2) to get `ñ`.
+  `composition_id` and order by `step` to reconstruct each recipe. The example above is one composition: press `Option + ¨` (step 1), then press `n` (step 2) to get `ñ`.
 - `display_name` is the layout's human readable name, `layout_id` or `id` is its numeric key from the Postgres database.
 
 **Errors**:
@@ -178,6 +178,8 @@ Response:
 - Unknown `country` or a `char` with no matches returns 200 OK with empty arrays `{"single":[], "compositions":[]}`
 
 ### Regenerating layout data
+
+The source layouts in `parser/macLayouts` are committed. They were extracted with macXtract v1.0.0 on macOS Sonoma 14.6.1 (`macxtract -o parser/macLayouts`) and verified against `UCKeyTranslate`: 239 of 239 layouts match macOS's own output for every key and modifier combination. Regenerating them requires a Mac (the parser runs anywhere).
 
 The CSVs in `logs/` are committed and up to date. No need to run the parser to produce them. To regenerate them from source `.keylayout` files:
 
@@ -189,12 +191,11 @@ python3 -m macParser.keylayoutParser
 
 ## Status & scope
 
-**v2 (current):** Apple `.keylayout` data, shift and option modifier layers, dead key compositions and the query above.
+**v2 (current):** every built in macOS layout (213 after exclusions), shift and option modifier layers, dead key compositions and the query above.
 
 Deliberately deferred to v3:
 
 - Windows (MSKLC / KLC) layout track
 - Linux layout track
-- OS-native key extraction via `UCKeyTranslate`
 
 Scope was drawn to ship something working over something complete.

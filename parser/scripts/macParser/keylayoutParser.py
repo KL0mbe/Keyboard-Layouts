@@ -1,24 +1,19 @@
-import cleaners.cleanAppleKeyLayoutNames as clean
-from .layoutLocale import extract_country_language
-from .identity import associate_apple_ids
-from .modifiers import extract_modifiers
-from .deadKeys import extract_dead_keys
-from .keyParser import extract_keys
+from macParser.layoutLocale import extract_country_language
+from macParser.modifiers import extract_modifiers
+from macParser.deadKeys import extract_dead_keys
+from macParser.keyParser import extract_keys
+from cleaners.xmlCleaner import cleanLayout
+from macParser.writers import write_files
 import xml.etree.ElementTree as ET
-from .writers import write_files
 import config
 import json
 import csv
-
-appleNameDict = clean.build_apple_display_name()
 
 countries = {}
 languages = {}
 characters = {}
 keyCombos = {}
 compositions = []
-matches = {}
-unMatches = []
 
 kloList = []
 
@@ -26,7 +21,7 @@ with open(config.parserDir / "TISNames/loctable.json", newline="", encoding="utf
     loctable = json.load(f)
 
 loctable_keys = {
-    key.lower().replace(" ", "").replace("-", ""): key for key in loctable["en"].keys()
+    key.lower().replace(" ", "").replace("-", "").replace("_", ""): key for key in loctable["en"].keys()
 }
 
 with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as f:
@@ -46,18 +41,19 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
         ]
     )
 
-    path = config.parserDir / "Cleaned Apple Keyboard layouts"
+    path = config.parserDir / "macLayouts"
+    if not any(path.glob("*.keylayout")):
+        raise FileNotFoundError(f"no .keylayout files in {path}")
     for file in path.glob("*.keylayout"):
-        tree = ET.parse(file)
-        root = tree.getroot()
+        if file.stem in config.EXCLUDED_LAYOUTS or file.stem.startswith(config.EXCLUDED_PREFIXES):
+            continue
+        root = ET.fromstring(cleanLayout(file))
 
         # get modifiers
         modifiersMap, baseIndex, mapSet = extract_modifiers(root, file)
 
         # Associate layouts with their appleIDs
-        finalAppleID, name = associate_apple_ids(root, unMatches, matches)
-        if finalAppleID is None:
-            continue
+        finalAppleID = file.stem
 
         actionIDToCombo = {}
         baseKey = {}
@@ -67,18 +63,16 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
                      keyCombos=keyCombos, finalAppleID=finalAppleID, )
 
         # get the modified keys
-        for modifier, targets in modifiersMap.items():
-            if targets == set():
-                continue
+        for targets, modifier in modifiersMap.items():
             extract_keys(root=root, mapSet=mapSet, index=modifier, baseIndex=baseIndex, baseKey=baseKey,
-                         modifiers_set=frozenset(targets), actionIDToCombo=actionIDToCombo, characters=characters,
+                         modifiers_set=targets, actionIDToCombo=actionIDToCombo, characters=characters,
                          keyCombos=keyCombos, finalAppleID=finalAppleID, )
 
         # extract Dead Keys
         extract_dead_keys(root, characters, actionIDToCombo, compositions, finalAppleID)
 
         # Set country and language
-        langAlpha, countryAlpha, country, nativeCountry = extract_country_language(name, languages, countries)
+        langAlpha, countryAlpha, country, nativeCountry = extract_country_language(finalAppleID, languages, countries)
 
         # get letter layout
         qwertyRow = "".join(baseKey.get(code, "?") for code in config.LetterRow)
@@ -90,7 +84,7 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
         # get native name
         nativeNames = loctable.get(langAlpha) or loctable.get("en")
         stem = finalAppleID.split(".")[-1]
-        norm = stem.lower().replace(" ", "").replace("-", "")
+        norm = stem.lower().replace(" ", "").replace("-", "").replace("_", "")
         key = loctable_keys.get(norm)
         nativeDisplayName = nativeNames.get(key)
 
@@ -112,7 +106,7 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
                 nativeCountry if country is not None else "X",
                 layout,
                 "active",
-                appleNameDict[finalAppleID],
+                root.get("name"),
                 nativeDisplayName,
                 klo,
                 None,
@@ -120,5 +114,5 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
             ]
         )
 
-write_files(config.logsDir, countries, languages, characters, keyCombos, compositions, unMatches, matches)
+write_files(config.logsDir, countries, languages, characters, keyCombos, compositions)
 print("Wrote all files")

@@ -96,7 +96,7 @@ CREATE TEMP TABLE IF NOT EXISTS composition_staging(
 output_char TEXT NOT NULL,
 apple_id TEXT NOT NULL,
 steps JSONB NOT NULL
-)ON COMMIT DROP;
+) ON COMMIT DROP;
 
 COPY composition_staging FROM '/seed/logs/compositions.csv' WITH (FORMAT csv, HEADER true);
 

@@ -3,7 +3,7 @@ import json
 import csv
 
 
-def write_files(logsDir, countries, languages, characters, keyCombos, compositions, unMatches, matches):
+def write_files(logsDir, countries, languages, characters, keyCombos, compositions):
     with open(logsDir / "countries.csv", "w", newline="", encoding="utf-8") as eCountries:
         writer = csv.writer(eCountries, lineterminator="\n")
         writer.writerow(["country", "native_name", "iso_3166"])
@@ -66,13 +66,3 @@ def write_files(logsDir, countries, languages, characters, keyCombos, compositio
         keyCodes = {combo[1] for combo in keyCombos}
         for code in keyCodes:
             writer.writerow(["macOS", code, config.LAYOUT_DEPENDENCY.get(code)])
-
-    with open(logsDir / "matchedNames.csv", "w", newline="", encoding="utf-8") as eMatch:
-        writer = csv.writer(eMatch, lineterminator="\n")
-        writer.writerow(["name", "apple_id", "source"])
-        for name, value in matches.items():
-            writer.writerow([name, value[0], value[1]])
-
-    with open(logsDir / "noMatchNames.txt", "w", newline="", encoding="utf-8") as noMatch:
-        for name in unMatches:
-            noMatch.write(f"Keylayout: {name} had no match in the list of appleIDs\n")

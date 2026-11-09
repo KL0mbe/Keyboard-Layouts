@@ -5,17 +5,19 @@ import config
 en = Locale("en")
 
 
-def extract_country_language(name, languages, countries):
-    lang = pc.languages.lookup(config.LayoutLocale.get(name).get("language"))
+def extract_country_language(appleID, languages, countries):
+    cleanedID = config.clean_str(appleID.split(".")[-1])
+    lang = pc.languages.lookup(config.LayoutLocale.get(cleanedID).get("language"))
     langAlpha = getattr(lang, "alpha_2", None) or lang.alpha_3
-    locale = Locale(langAlpha)
+    hasLocale = localedata.exists(langAlpha)
 
-    dictCountry = config.LayoutLocale.get(name).get("country")
+    dictCountry = config.LayoutLocale.get(cleanedID).get("country")
 
     # extract languages for lang table
+    native_name = Locale(langAlpha).languages.get(langAlpha) if hasLocale else None
     languages[langAlpha] = {
         "name": lang.name,
-        "native_name": locale.languages.get(langAlpha),
+        "native_name": native_name,
     }
 
     if dictCountry is not None:
@@ -27,7 +29,7 @@ def extract_country_language(name, languages, countries):
 
     # get Country Names
     nativeCountry = None
-    if localedata.exists(langAlpha) and country is not None:
+    if hasLocale and country is not None:
         nativeCountry = Locale(langAlpha).territories.get(
             countryAlpha, country.name
         )
@@ -35,6 +37,8 @@ def extract_country_language(name, languages, countries):
     # extract countries for country table
     if countryAlpha != "X":
         englishCountry = en.territories.get(countryAlpha, country.name)
+        if nativeCountry is None:
+            nativeCountry = englishCountry
         countries[nativeCountry] = {
             "country": englishCountry,
             "iso": countryAlpha,

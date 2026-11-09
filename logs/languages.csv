@@ -1,52 +1,123 @@
 name,native_name,iso_639
-Hungarian,magyar,hu
-Swedish,svenska,sv
-Icelandic,íslenska,is
-Inuktitut,ᐃᓄᒃᑎᑐᑦ,iu
-English,English,en
-Slovak,slovenčina,sk
-Serbian,српски,sr
-Arabic,العربية,ar
-Turkish,Türkçe,tr
-French,français,fr
-Portuguese,português,pt
-Hebrew,עברית,he
-German,Deutsch,de
-Azerbaijani,azərbaycan,az
-Russian,русский,ru
-Norwegian,norsk,no
-Ukrainian,українська,uk
-Faroese,føroyskt,fo
-Romanian,română,ro
-Uzbek,o‘zbek,uz
-Maori,Māori,mi
-Estonian,eesti,et
-Finnish,suomi,fi
-Dutch,Nederlands,nl
-Lithuanian,lietuvių,lt
-Italian,italiano,it
-Bulgarian,български,bg
-Belarusian,беларуская,be
-Pushto,پښتو,ps
-Spanish,español,es
-Armenian,հայերեն,hy
-Modern Greek (1453-),Ελληνικά,el
+Mandaic,,mid
 Thai,ไทย,th
-Panjabi,ਪੰਜਾਬੀ,pa
-Macedonian,македонски,mk
-Latvian,latviešu,lv
-Slovenian,slovenščina,sl
-Hindi,हिन्दी,hi
-Irish,Gaeilge,ga
-Persian,فارسی,fa
-Gujarati,ગુજરાતી,gu
-Danish,dansk,da
-Czech,čeština,cs
-Northern Sami,davvisámegiella,se
-Nepali (macrolanguage),नेपाली,ne
-Cherokee,ᏣᎳᎩ,chr
-Polish,polski,pl
-Vietnamese,Tiếng Việt,vi
+Navajo,Diné Bizaad,nv
+Romanian,română,ro
+Estonian,eesti,et
+Lule Sami,julevsámegiella,smj
+Swedish,svenska,sv
 Croatian,hrvatski,hr
+Hebrew,עברית,he
+En,,enc
+Maithili,मैथिली,mai
+Bengali,বাংলা,bn
+Hmong,,hmn
+Ukrainian,українська,uk
+Spanish,español,es
+Dogri (macrolanguage),डोगरी,doi
+Maltese,Malti,mt
+Czech,čeština,cs
+Yoruba,Èdè Yorùbá,yo
+Portuguese,português,pt
+Northern Sami,davvisámegiella,se
+Malayalam,മലയാളം,ml
+Modern Greek (1453-),Ελληνικά,el
+Sindhi,سنڌي,sd
+Albanian,shqip,sq
+Russian,русский,ru
+Cherokee,ᏣᎳᎩ,chr
+Sinhala,සිංහල,si
+Ume Sami,,sju
+French,français,fr
+As,,asz
+Uzbek,o‘zbek,uz
+Amharic,አማርኛ,am
+Kirghiz,кыргызча,ky
+Inuktitut,ᐃᓄᒃᑎᑐᑦ,iu
+Bulgarian,български,bg
+Inari Sami,anarâškielâ,smn
+Skolt Sami,sääʹmǩiõll,sms
+Lao,ລາວ,lo
+Marathi,मराठी,mr
+Kildin Sami,,sjd
+Turkmen,türkmen dili,tk
+Bodo (India),बर’,brx
+Finnish,suomi,fi
+Slovak,slovenčina,sk
+Persian,فارسی,fa
+Uighur,ئۇيغۇرچە,ug
+Polish,polski,pl
+Tibetan,བོད་སྐད་,bo
+Telugu,తెలుగు,te
+German,Deutsch,de
+Latvian,latviešu,lv
+Manipuri,মৈতৈলোন্,mni
+Hu,,huo
+Kabyle,Taqbaylit,kab
+Dzongkha,རྫོང་ཁ,dz
+Chickasaw,Chikashshanompaʼ,cic
+Icelandic,íslenska,is
+Gujarati,ગુજરાતી,gu
+Igbo,Igbo,ig
+Azerbaijani,azərbaycan,az
+Samoan,,sm
+Western Apache,,apw
+Rejang,,rej
+Maori,Māori,mi
+Serbian,српски,sr
+To,,toz
+Kannada,ಕನ್ನಡ,kn
+Fulah,Pulaar,ff
+Syriac,ܣܘܪܝܝܐ,syr
+Lithuanian,lietuvių,lt
+Rohingya,𐴌𐴗𐴥𐴝𐴙𐴚𐴒𐴙𐴝,rhg
+Ak,,akq
+Arabic,العربية,ar
+Dutch,Nederlands,nl
+Italian,italiano,it
+Georgian,ქართული,ka
+Hindi,हिन्दी,hi
+Northern Kurdish,,kmr
+Khmer,ខ្មែរ,km
+Ga,Gã,gaa
+Turkish,Türkçe,tr
+Nepali (macrolanguage),नेपाली,ne
+Burmese,မြန်မာ,my
+Urdu,اردو,ur
+Oriya (macrolanguage),ଓଡ଼ିଆ,or
+Macedonian,македонски,mk
+Standard Moroccan Tamazight,ⵜⴰⵎⴰⵣⵉⵖⵜ,zgh
 Welsh,Cymraeg,cy
+Wancho Naga,,nnp
+Chuvash,чӑваш,cv
+Pite Sami,,sje
+Malecite-Passamaquoddy,,pqm
+Central Kurdish,کوردیی ناوەندی,ckb
+Konkani (macrolanguage),कोंकणी,kok
+Osage,𐓏𐓘𐓻𐓘𐓻𐓟,osa
+Tajik,тоҷикӣ,tg
+Norwegian,norsk,no
 Hawaiian,ʻŌlelo Hawaiʻi,haw
+Panjabi,ਪੰਜਾਬੀ,pa
+Armenian,հայերեն,hy
+Vietnamese,Tiếng Việt,vi
+Pushto,پښتو,ps
+Mongolian,монгол,mn
+Yiddish,ייִדיש,yi
+Divehi,ދިވެހިބަސް,dv
+Santali,ᱥᱟᱱᱛᱟᱲᱤ,sat
+Danish,dansk,da
+Choctaw,Chahta,cho
+N'Ko,ߒߞߏ,nqo
+Belarusian,беларуская,be
+Malay (macrolanguage),Melayu,ms
+Ingush,,inh
+Slovenian,slovenščina,sl
+Mi'kmaq,Lʼnuiʼsuti,mic
+Southern Sami,Åarjelsaemien gïele,sma
+Western Armenian,,hyw
+Kazakh,қазақ тілі,kk
+Sa,,sax
+Kashmiri,کٲشُر,ks
+Ha,,haq
+Faroese,føroyskt,fo

@@ -18,6 +18,7 @@ def recursive_steps(root, state, actionIdToCombo):
                     return  nextStep + [combos]
     return None 
 
+
 def extract_dead_keys(root, characters, actionIDToCombo, compositions, finalAppleID):
     for action in root.findall("actions/action"):
         for when in action.findall("when"):

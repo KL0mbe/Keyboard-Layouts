@@ -21,8 +21,8 @@ def extract_keys(root, mapSet, index, baseIndex, baseKey, modifiers_set,
                 if action == subAct.get("id"):
                     actionElement = subAct.find("when[@state='none']")
 
-            # if actionElement is None:
-            #     print(f"No ActionElement for {name, virtualCode}")
+            if actionElement is None:
+                continue
 
             actionOutput = actionElement.get("output")
             # Dead Keys
@@ -31,9 +31,15 @@ def extract_keys(root, mapSet, index, baseIndex, baseKey, modifiers_set,
                 terminator = root.find(
                     f"terminators/when[@state='{actionState}']"
                 )
+                if terminator is None:
+                    continue
                 output = terminator.get("output")
             else:
                 output = actionOutput
+
+        # if it's still empty after action check skip it
+        if not output:
+            continue
 
         if index == baseIndex:
             baseKey[virtualCode] = output

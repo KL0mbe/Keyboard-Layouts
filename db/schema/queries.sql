@@ -7,8 +7,8 @@ DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
 -- Query for seeding schema and data
-\i '/db/Schema/schema.sql'
-\i '/db/Schema/seed.sql'
+\i 'db/schema/schema.sql'
+\i 'db/schema/seed.sql'
 
 -- QUERY for answering "how to type •" on a specific keyboard
 SELECT layout.id, base.character, combo.modify_opt_alt, combo.modify_shift, combo.modify_ctrl, combo.modify_altgr
