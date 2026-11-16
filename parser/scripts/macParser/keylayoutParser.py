@@ -77,7 +77,7 @@ with open(config.logsDir / "layouts.csv", "w", newline="", encoding="utf-8") as 
         # get letter layout
         qwertyRow = "".join(baseKey.get(code, "?") for code in config.LetterRow)
         if qwertyRow in config.LetterLayouts:
-            layout = qwertyRow
+            layout = config.LetterLayouts[qwertyRow]
         else:
             layout = "other"
 

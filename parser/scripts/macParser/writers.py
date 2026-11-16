@@ -32,6 +32,7 @@ def write_files(logsDir, countries, languages, characters, keyCombos, compositio
                 "keyboard_apple_id",
                 "opt_alt",
                 "shift",
+                "caps",
                 "ctrl",
                 "altGR",
             ]
@@ -47,6 +48,7 @@ def write_files(logsDir, countries, languages, characters, keyCombos, compositio
                         key[0],
                         "option" in mods,
                         "shift" in mods,
+                        "caps" in mods,
                         False,
                         False,
                     ]

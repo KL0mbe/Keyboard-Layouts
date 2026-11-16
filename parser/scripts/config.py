@@ -16,7 +16,8 @@ CANON = {
 }
 
 
-TARGETS = (frozenset(), {"shift"}, {"option"}, {"shift", "option"})
+TARGETS = (frozenset(), {"shift"}, {"option"}, {"caps"}, {"shift", "option"}, {"shift", "caps"},
+           {"shift", "option", "caps"}, {"option", "caps"})
 
 LAYOUT_DEPENDENCY = {
     10: "iso",
@@ -33,10 +34,19 @@ NUMPAD_CODES = [65, 67, 69, 71, 75, 76, 78, 81, 82, 83, 84, 85, 86, 87, 88, 89, 
 LetterRow = [12, 13, 14, 15, 17, 16]
 
 LetterLayouts = {
+    # QWERTY and latin variants
     "qwerty": "qwerty",
     "azerty": "azerty",
     "qwertz": "qwertz",
+    "qzerty": "qzerty",
     "fgğıod": "fgğıod",
+    "',.pyf": "dvorak",
+    # Cyrillic
+    "йцукен": "jcuken",
+    "йқукен": "jcuken",
+    "яшерты": "yashert",
+    "яшерти": "yashert",
+    "явертъ": "yavert",
 }
 
 LayoutLocale = {

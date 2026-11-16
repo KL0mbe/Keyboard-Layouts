@@ -4,23 +4,19 @@
     "Windows",
     "Linux"
   ],
-  "letter_layouts": {
-    "other": [
-      "other"
-    ],
-    "qwerty": [
-      "qwerty"
-    ],
-    "azerty": [
-      "azerty"
-    ],
-    "qwertz": [
-      "qwertz"
-    ],
-    "fgğıod": [
-      "fgğıod"
-    ]
-  },
+"letter_layouts": {
+  "other": ["other"],
+  "qwerty": ["qwerty"],
+  "azerty": ["azerty"],
+  "qwertz": ["qwertz"],
+  "qzerty": ["qzerty"],
+  "fgğıod": ["fgğıod"],
+  "dvorak": ["dvorak"],
+  "colemak": ["colemak"],
+  "jcuken": ["jcuken"],
+  "yashert": ["yashert"],
+  "yavert": ["yavert"]
+},
   "layout_status": [
     "active",
     "legacy",

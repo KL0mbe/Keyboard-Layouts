@@ -72,11 +72,12 @@ key_code_id INTEGER NOT NULL REFERENCES standard_keys(id),
 keyboard_id INTEGER NOT NULL REFERENCES keyboard_layouts(id),
 modify_opt_alt BOOL NOT NULL,
 modify_shift BOOL NOT NULL,
+modify_caps BOOL NOT NULL,
 modify_ctrl BOOL NOT NULL,
 modify_altgr BOOL NOT NULL,
 created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
 modified_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-UNIQUE(key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
+UNIQUE(key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_caps, modify_altgr)
 );
 
 CREATE TABLE compositions(

@@ -10,6 +10,12 @@ CREATE SCHEMA public;
 \i 'db/schema/schema.sql'
 \i 'db/schema/seed.sql'
 
+-- Docker queries
+-- check all inserts
+docker compose logs db | grep -E "COPY|INSERT|ERROR"
+-- enter the psql db
+docker compose exec db psql -U KLombe -d keyboards
+
 -- QUERY for answering "how to type •" on a specific keyboard
 SELECT layout.id, base.character, combo.modify_opt_alt, combo.modify_shift, combo.modify_ctrl, combo.modify_altgr
 FROM key_combos AS combo

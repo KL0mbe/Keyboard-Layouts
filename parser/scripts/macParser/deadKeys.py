@@ -15,7 +15,7 @@ def recursive_steps(root, state, actionIdToCombo):
                     nextStep = recursive_steps(root, when.get("state"), actionIdToCombo)
                     if nextStep is None:
                         return None
-                    return  nextStep + [combos]
+                    return nextStep + [combos]
     return None 
 
 
@@ -32,6 +32,7 @@ def extract_dead_keys(root, characters, actionIDToCombo, compositions, finalAppl
                 primers = recursive_steps(root, when.get("state"), actionIDToCombo)
                 if not primers:
                     continue
+                len(primers)
 
                 compositions.append(
                     [

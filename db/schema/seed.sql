@@ -76,14 +76,15 @@ key_code TEXT,
 apple_id TEXT NOT NULL,
 opt_alt BOOL NOT NULL,
 shift BOOL NOT NULL,
+caps BOOL NOT NULL,
 ctrl BOOL NOT NULL,
 altgr BOOL NOT NULL
 ) ON COMMIT DROP;
 
 COPY combos_staging FROM '/seed/logs/combos.csv' WITH (FORMAT csv, HEADER true);
 
-INSERT INTO key_combos (output_char_id, base_key_id, key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_ctrl, modify_altgr)
-SELECT char.id, base.id, skey.id, keyboard.id, cs.opt_alt, cs.shift, cs.ctrl, cs.altgr
+INSERT INTO key_combos (output_char_id, base_key_id, key_code_id, keyboard_id, modify_opt_alt, modify_shift, modify_caps, modify_ctrl, modify_altgr)
+SELECT char.id, base.id, skey.id, keyboard.id, cs.opt_alt, cs.shift, cs.caps, cs.ctrl, cs.altgr
 FROM combos_staging AS cs
 JOIN characters AS char ON char.character = cs.output_char
 JOIN characters AS base ON base.character = cs.base_key
@@ -124,6 +125,7 @@ CROSS JOIN LATERAL jsonb_array_elements(rows.steps) WITH ORDINALITY AS s(step_da
 JOIN key_combos AS combo ON combo.keyboard_id = layout.id
     AND combo.modify_opt_alt = (s.step_data -> 1) ? 'option'  
     AND combo.modify_shift = (s.step_data -> 1) ? 'shift'
+    AND combo.modify_caps = (s.step_data -> 1) ? 'caps'
     AND combo.modify_ctrl = (s.step_data -> 1) ? 'ctrl'
     AND combo.modify_altgr = (s.step_data -> 1) ? 'altgr'
 JOIN standard_keys AS skeys ON skeys.id = combo.key_code_id

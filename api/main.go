@@ -68,14 +68,41 @@ func getChar(pool *pgxpool.Pool) http.HandlerFunc {
 		}
 		singleRows, err := pool.Query(context.Background(), `
 		SELECT layout.id, base.character, combo.modify_opt_alt, 
-		combo.modify_shift, combo.modify_ctrl, combo.modify_altgr, 
+		combo.modify_shift, combo.modify_caps, combo.modify_ctrl, combo.modify_altgr,
 		layout.native_name AS display_name
 		FROM key_combos AS combo 
 		JOIN characters AS out ON out.id = combo.output_char_id 
 		JOIN keyboard_layouts AS layout ON layout.id = combo.keyboard_id 
 		JOIN characters AS base ON base.id = combo.base_key_id 
-		JOIN countries as c ON c.id = layout.country_id 
-		WHERE out.character = $1 AND c.native_name = $2;`, char, country)
+		JOIN countries as c ON c.id = layout.country_id
+		JOIN standard_keys sk ON sk.id = combo.key_code_id
+		LEFT JOIN key_dependencies kd ON kd.id = sk.enum_id
+		WHERE out.character = $1 AND c.native_name = $2
+		AND (kd.enum IS NULL OR kd.enum <> 'jis')
+		AND NOT (combo.modify_caps AND EXISTS (
+            SELECT 1
+            FROM key_combos AS other
+            WHERE other.keyboard_id    = combo.keyboard_id
+            AND other.key_code_id    = combo.key_code_id
+            AND other.output_char_id = combo.output_char_id
+            AND other.modify_opt_alt = combo.modify_opt_alt
+            AND other.modify_shift   = combo.modify_shift
+            AND other.modify_ctrl    = combo.modify_ctrl
+            AND other.modify_altgr   = combo.modify_altgr
+            AND NOT other.modify_caps
+            ))
+            AND NOT (combo.modify_caps AND NOT combo.modify_shift AND EXISTS (
+            SELECT 1
+            FROM key_combos AS other
+            WHERE other.keyboard_id = combo.keyboard_id
+            AND other.key_code_id = combo.key_code_id
+            AND other.output_char_id = combo.output_char_id
+            AND other.modify_opt_alt = combo.modify_opt_alt
+            AND other.modify_ctrl = combo.modify_ctrl
+            AND other.modify_altgr = combo.modify_altgr
+            AND NOT other.modify_caps
+            AND other.modify_shift
+            ));`, char, country)
 		if err != nil {
 			http.Error(w, "Key Combo Query failed", http.StatusInternalServerError)
 			return
@@ -87,17 +114,46 @@ func getChar(pool *pgxpool.Pool) http.HandlerFunc {
 		}
 		compositions, err := pool.Query(context.Background(), `
 		SELECT comp.id AS composition_id, layout.id AS layout_id, out.character AS output_char, 
-		base.character AS base_char, combo.modify_shift, combo.modify_opt_alt, steps.step, 
+		base.character AS base_char, combo.modify_shift, combo.modify_caps, combo.modify_opt_alt, steps.step,
 		layout.native_name AS display_name
 		FROM key_combos AS combo 
 		JOIN composition_steps AS steps ON steps.combo_id = combo.id 
-		JOIN standard_keys AS skey ON skey.id = combo.key_code_id 
-		JOIN compositions AS comp ON comp.id = steps.composition_id 
+    	JOIN compositions AS comp ON comp.id = steps.composition_id
 		JOIN characters AS out ON out.id = comp.output_char_id 
 		JOIN characters AS base ON base.id = combo.base_key_id 
 		JOIN keyboard_layouts AS layout ON layout.id = comp.keyboard_id 
 		JOIN countries AS c ON c.id = layout.country_id
-		WHERE out.character = $1 AND c.native_name = $2;`, char, country)
+		WHERE out.character = $1 AND c.native_name = $2
+		AND NOT EXISTS (
+        SELECT 1
+        FROM composition_steps AS s
+        JOIN key_combos AS kc ON kc.id = s.combo_id
+        JOIN standard_keys AS sk ON sk.id = kc.key_code_id
+        JOIN key_dependencies AS kd2 ON kd2.id = sk.enum_id
+        WHERE s.composition_id = comp.id
+        AND kd2.enum = 'jis'
+        )
+        AND NOT (
+        EXISTS (
+        SELECT 1
+        FROM composition_steps AS s
+        JOIN key_combos AS kc ON kc.id = s.combo_id
+        WHERE s.composition_id = comp.id
+        AND kc.modify_caps
+        )
+        AND EXISTS (
+        SELECT 1
+        FROM compositions AS twin
+        WHERE twin.keyboard_id = comp.keyboard_id
+        AND twin.output_char_id = comp.output_char_id
+        AND twin.id <> comp.id
+        AND NOT EXISTS (
+        SELECT 1
+        FROM composition_steps AS s
+        JOIN key_combos AS kc ON kc.id = s.combo_id
+        WHERE s.composition_id = twin.id
+        AND kc.modify_caps
+        )));`, char, country)
 		if err != nil {
 			http.Error(w, "Key Combo Query failed", http.StatusInternalServerError)
 			return
